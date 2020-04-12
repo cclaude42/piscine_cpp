@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/12 11:28:54 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/12 15:48:20 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/04/12 19:29:51 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,7 @@ void	Account::displayStatus(void) const
 	return ;
 }
 
-		Account::Account(int initial_deposit)
+Account::Account(int initial_deposit)
 {
 	_accountIndex = _nbAccounts;
 	_nbAccounts++;
@@ -135,7 +135,7 @@ void	Account::displayStatus(void) const
 	cout << ";created" << endl;
 	return ;
 }
-		Account::~Account(void)
+Account::~Account(void)
 {
 	_displayTimestamp();
 	cout << "index:" << _accountIndex;

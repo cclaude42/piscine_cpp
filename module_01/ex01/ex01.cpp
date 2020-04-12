@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   ex01.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/11 15:25:41 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/12 17:19:50 by cclaude          ###   ########.fr       */
+/*   Created: 2020/04/12 17:52:11 by cclaude           #+#    #+#             */
+/*   Updated: 2020/04/12 17:56:23 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-int	main(int ac, char **av)
+void	memoryLeak(void)
 {
-	using	std::cout;
-	using	std::endl;
-	int		i;
-	int		j;
+	std::string	*panther = new std::string("String panther");
+	std::cout << *panther << std::endl;
+	delete panther;
+}
 
-	for (i = 1 ; i < ac ; i++)
-	{
-		j = 0;
-		while (av[i][j])
-			cout << char(toupper(av[i][j++]));
-	}
-	if (ac == 1)
-		cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	cout << endl;
+int		main(void)
+{
+	memoryLeak();
 	return (0);
 }

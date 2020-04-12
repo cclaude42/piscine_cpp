@@ -1,32 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/11 15:25:41 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/12 17:19:50 by cclaude          ###   ########.fr       */
+/*   Created: 2020/04/12 16:59:17 by cclaude           #+#    #+#             */
+/*   Updated: 2020/04/12 17:47:20 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Pony.hpp"
 
-int	main(int ac, char **av)
+void	ponyOnTheHeap(string name)
 {
-	using	std::cout;
-	using	std::endl;
-	int		i;
-	int		j;
+	Pony	*p;
 
-	for (i = 1 ; i < ac ; i++)
+	cout << "Before scope" << endl;
+	if (true)
 	{
-		j = 0;
-		while (av[i][j])
-			cout << char(toupper(av[i][j++]));
+		p = new Pony(name);
+		p->feed();
 	}
-	if (ac == 1)
-		cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+	cout << "After scope" << endl;
+	delete p;
+}
+void	ponyOnTheStack(string name)
+{
+	cout << "Before scope" << endl;
+	if (true)
+	{
+		Pony	p(name);
+		p.feed();
+	}
+	cout << "After scope" << endl;
+}
+
+int	main(void)
+{
+	ponyOnTheStack("Stacker");
 	cout << endl;
+	ponyOnTheHeap("Heaper");
 	return (0);
 }

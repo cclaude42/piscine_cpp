@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/11 15:25:41 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/12 17:19:50 by cclaude          ###   ########.fr       */
+/*   Created: 2020/04/12 18:18:28 by cclaude           #+#    #+#             */
+/*   Updated: 2020/04/12 18:22:12 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Zombie.hpp"
 
-int	main(int ac, char **av)
+void	Zombie::announce(void)
 {
-	using	std::cout;
-	using	std::endl;
-	int		i;
-	int		j;
-
-	for (i = 1 ; i < ac ; i++)
-	{
-		j = 0;
-		while (av[i][j])
-			cout << char(toupper(av[i][j++]));
-	}
-	if (ac == 1)
-		cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	cout << endl;
-	return (0);
+	cout << "<" << _name << " (" << _type << ")> Braiiiiiiinnnssss..." << endl;
 }

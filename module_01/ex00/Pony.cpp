@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Pony.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/11 15:25:41 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/12 17:19:50 by cclaude          ###   ########.fr       */
+/*   Created: 2020/04/12 17:33:48 by cclaude           #+#    #+#             */
+/*   Updated: 2020/04/12 19:29:33 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Pony.hpp"
 
-int	main(int ac, char **av)
+void	Pony::feed(void)
 {
-	using	std::cout;
-	using	std::endl;
-	int		i;
-	int		j;
-
-	for (i = 1 ; i < ac ; i++)
+	if (_hungry)
 	{
-		j = 0;
-		while (av[i][j])
-			cout << char(toupper(av[i][j++]));
+		cout << "    You feed " << _name << " an apple." << endl;
+		_hungry = false;
 	}
-	if (ac == 1)
-		cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	cout << endl;
-	return (0);
+	else
+		cout << "    " << _name << " isn't hungry." << endl;
+}
+
+Pony::Pony(string name)
+{
+	_name = name;
+	_hungry = true;
+	cout << "    Say hello to " << _name << " !"<< endl;
+}
+
+Pony::~Pony(void)
+{
+	cout << "    Say goodbye to " << _name << "..."<< endl;
 }
