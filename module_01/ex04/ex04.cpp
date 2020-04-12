@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ex04.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/12 18:33:49 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/12 20:30:52 by cclaude          ###   ########.fr       */
+/*   Created: 2020/04/12 20:31:51 by cclaude           #+#    #+#             */
+/*   Updated: 2020/04/12 20:41:24 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieHorde.hpp"
+#include <iostream>
+
+using	std::string;
+using	std::cout;
+using	std::endl;
 
 int	main(void)
 {
-	ZombieHorde	*wwz;
+	string	str = "HELLO THIS IS BRAIN";
+	string	*ptr = &str;
+	string	&ref = str;
 
-	wwz = new ZombieHorde(10);
-	wwz->announce();
-	delete wwz;
-
-	wwz = new ZombieHorde(0);
-	wwz->announce();
-	delete wwz;
+	cout << str << endl;
+	cout << *ptr << endl;
+	cout << ref << endl;
 
 	return (0);
 }
