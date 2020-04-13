@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Human.hpp                                          :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/13 14:44:35 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/13 16:18:50 by cclaude          ###   ########.fr       */
+/*   Created: 2020/04/13 16:19:04 by cclaude           #+#    #+#             */
+/*   Updated: 2020/04/13 16:24:42 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMAN_HPP
-# define HUMAN_HPP
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-# include "Brain.hpp"
+# include <iostream>
 
-class Human {
+class Weapon {
 public:
-	std::string	identify(void);
-	const Brain	&getBrain(void);
-	Human(void);
+	const std::string	&getType(void);
+	void				setType(std::string type);
+	Weapon(std::string type);
 private:
-	const Brain	_brain;
+	std::string	_type;
 };
 
 #endif

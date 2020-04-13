@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 14:50:15 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/13 15:19:58 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/04/13 17:43:47 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,6 @@ std::string		Human::identify(void)
 Human::Human(void)
 {
 	const Brain	_brain;
+
+	(void)_brain;
 }

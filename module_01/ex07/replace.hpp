@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Human.hpp                                          :+:      :+:    :+:   */
+/*   replace.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/13 14:44:35 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/13 16:18:50 by cclaude          ###   ########.fr       */
+/*   Created: 2020/04/13 17:50:55 by cclaude           #+#    #+#             */
+/*   Updated: 2020/04/13 18:35:14 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMAN_HPP
-# define HUMAN_HPP
+#ifndef REPLACE_HPP
+# define REPLACE_HPP
 
-# include "Brain.hpp"
-
-class Human {
-public:
-	std::string	identify(void);
-	const Brain	&getBrain(void);
-	Human(void);
-private:
-	const Brain	_brain;
-};
+# include <iostream>
+# include <fstream>
+# include <cstring>
 
 #endif
