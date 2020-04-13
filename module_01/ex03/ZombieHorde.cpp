@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/12 19:47:12 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/12 20:27:48 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/04/13 14:06:18 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ZombieHorde::announce(void)
 ZombieHorde::ZombieHorde(int n)
 {
 	int		i;
-	string	names[10] = {"Clark", "Benny", "Simon", "Owen", "Marshall",
+	std::string	names[10] = {"Clark", "Benny", "Simon", "Owen", "Marshall",
 					"Rose", "Dominic", "Bjorn", "Paul", "Rudolf"};
 
 	srand(time(0));

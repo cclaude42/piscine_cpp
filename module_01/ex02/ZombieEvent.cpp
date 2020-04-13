@@ -6,18 +6,18 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/12 18:30:09 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/12 19:31:47 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/04/13 14:06:18 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ZombieEvent.hpp"
 
-void	ZombieEvent::setZombieType(string type)
+void	ZombieEvent::setZombieType(std::string type)
 {
 	_setType = type;
 }
 
-Zombie*	ZombieEvent::newZombie(string name)
+Zombie*	ZombieEvent::newZombie(std::string name)
 {
 	Zombie	*newbie;
 
@@ -30,7 +30,7 @@ Zombie*	ZombieEvent::newZombie(string name)
 void	ZombieEvent::randomChump(void)
 {
 	Zombie	rando;
-	string	names[10] = {"Clark", "Benny", "Simon", "Owen", "Marshall",
+	std::string	names[10] = {"Clark", "Benny", "Simon", "Owen", "Marshall",
 						"Rose", "Dominic", "Bjorn", "Paul", "Rudolf"};
 
 	rando._name = names[rand() % 10];

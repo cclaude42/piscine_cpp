@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Human.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/11 15:25:41 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/13 14:06:57 by cclaude          ###   ########.fr       */
+/*   Created: 2020/04/13 14:50:15 by cclaude           #+#    #+#             */
+/*   Updated: 2020/04/13 15:19:58 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Human.hpp"
 
-int	main(int ac, char **av)
+const Brain&	Human::getBrain(void)
 {
-	int		i;
-	int		j;
+	return (_brain);
+}
 
-	for (i = 1 ; i < ac ; i++)
-	{
-		j = 0;
-		while (av[i][j])
-			std::cout << char(toupper(av[i][j++]));
-	}
-	if (ac == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	std::cout << std::endl;
-	return (0);
+std::string		Human::identify(void)
+{
+	return (_brain.identify());
+}
+
+Human::Human(void)
+{
+	const Brain	_brain;
 }

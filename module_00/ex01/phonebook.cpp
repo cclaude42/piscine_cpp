@@ -6,13 +6,13 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/11 16:10:38 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/12 13:46:56 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/04/13 14:09:47 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 
-string	truncate(string str)
+std::string	truncate(std::string str)
 {
 	if (str.length() > 10)
 		return (str.substr(0, 9) + ".");
@@ -20,88 +20,88 @@ string	truncate(string str)
 		return (str);
 }
 
-void	show_contact(Contact *book, int index)
+void		show_contact(Contact *book, int index)
 {
-	cout << "First name      : " << book[index].firstname << endl;
-	cout << "Last name       : " << book[index].lastname << endl;
-	cout << "Nickname        : " << book[index].nickname << endl;
-	cout << "Login           : " << book[index].login << endl;
-	cout << "Postal address  : " << book[index].address << endl;
-	cout << "Email           : " << book[index].email << endl;
-	cout << "Phone number    : " << book[index].phone << endl;
-	cout << "Birthday        : " << book[index].birthday << endl;
-	cout << "Favorite meal   : " << book[index].meal << endl;
-	cout << "Underwear color : " << book[index].underwear << endl;
-	cout << "Darkest secret  : " << book[index].secret << endl;
+	std::cout << "First name      : " << book[index].firstname << std::endl;
+	std::cout << "Last name       : " << book[index].lastname << std::endl;
+	std::cout << "Nickname        : " << book[index].nickname << std::endl;
+	std::cout << "Login           : " << book[index].login << std::endl;
+	std::cout << "Postal address  : " << book[index].address << std::endl;
+	std::cout << "Email           : " << book[index].email << std::endl;
+	std::cout << "Phone number    : " << book[index].phone << std::endl;
+	std::cout << "Birthday        : " << book[index].birthday << std::endl;
+	std::cout << "Favorite meal   : " << book[index].meal << std::endl;
+	std::cout << "Underwear color : " << book[index].underwear << std::endl;
+	std::cout << "Darkest secret  : " << book[index].secret << std::endl;
 }
 
-void	search_book(Contact *book, int count)
+void		search_book(Contact *book, int count)
 {
 	int		i;
-	string	input;
+	std::string	input;
 
 	if (count == 0)
 	{
-		cout << "No contacts to show." << endl << endl;
+		std::cout << "No contacts to show." << std::endl << std::endl;
 		return ;
 	}
 	for (i = 0 ; i < count ; i++)
 	{
-		cout << "*********************************************" << endl;
-		cout << "|" << setw(10) << i + 1;
-		cout << "|" << setw(10) << truncate(book[i].firstname);
-		cout << "|" << setw(10) << truncate(book[i].lastname);
-		cout << "|" << setw(10) << truncate(book[i].nickname);
-		cout << "|" << endl;
+		std::cout << "*********************************************" << std::endl;
+		std::cout << "|" << std::setw(10) << i + 1;
+		std::cout << "|" << std::setw(10) << truncate(book[i].firstname);
+		std::cout << "|" << std::setw(10) << truncate(book[i].lastname);
+		std::cout << "|" << std::setw(10) << truncate(book[i].nickname);
+		std::cout << "|" << std::endl;
 	}
-	cout << "*********************************************" << endl;
-	cout << "Select a contact by typing its number." << endl << endl;
-	getline(cin, input);
+	std::cout << "*********************************************" << std::endl;
+	std::cout << "Select a contact by typing its number." << std::endl << std::endl;
+	getline(std::cin, input);
 	if (input[0] > '0' && input[0] < '9' && input[1] == '\0')
 		show_contact(book, stoi(input) - 1);
-	cout << endl;
+	std::cout << std::endl;
 }
 
-void	add_book(Contact **book, int i)
+void		add_book(Contact **book, int i)
 {
-	string	str;
+	std::string	str;
 
-	cout << "Please enter contact's first name." << endl;
-	getline(cin, (*book)[i].firstname);
-	cout << "Please enter contact's last name." << endl;
-	getline(cin, (*book)[i].lastname);
-	cout << "Please enter contact's nickname." << endl;
-	getline(cin, (*book)[i].nickname);
-	cout << "Please enter contact's login." << endl;
-	getline(cin, (*book)[i].login);
-	cout << "Please enter contact's postal address." << endl;
-	getline(cin, (*book)[i].address);
-	cout << "Please enter contact's email address." << endl;
-	getline(cin, (*book)[i].email);
-	cout << "Please enter contact's phone number." << endl;
-	getline(cin, (*book)[i].phone);
-	cout << "Please enter contact's birthday." << endl;
-	getline(cin, (*book)[i].birthday);
-	cout << "Please enter contact's favorite meal." << endl;
-	getline(cin, (*book)[i].meal);
-	cout << "Please enter contact's underwear color." << endl;
-	getline(cin, (*book)[i].underwear);
-	cout << "Please enter contact's darkest secret." << endl;
-	getline(cin, (*book)[i].secret);
-	cout << endl;
+	std::cout << "Please enter contact's first name." << std::endl;
+	getline(std::cin, (*book)[i].firstname);
+	std::cout << "Please enter contact's last name." << std::endl;
+	getline(std::cin, (*book)[i].lastname);
+	std::cout << "Please enter contact's nickname." << std::endl;
+	getline(std::cin, (*book)[i].nickname);
+	std::cout << "Please enter contact's login." << std::endl;
+	getline(std::cin, (*book)[i].login);
+	std::cout << "Please enter contact's postal address." << std::endl;
+	getline(std::cin, (*book)[i].address);
+	std::cout << "Please enter contact's email address." << std::endl;
+	getline(std::cin, (*book)[i].email);
+	std::cout << "Please enter contact's phone number." << std::endl;
+	getline(std::cin, (*book)[i].phone);
+	std::cout << "Please enter contact's birthday." << std::endl;
+	getline(std::cin, (*book)[i].birthday);
+	std::cout << "Please enter contact's favorite meal." << std::endl;
+	getline(std::cin, (*book)[i].meal);
+	std::cout << "Please enter contact's underwear color." << std::endl;
+	getline(std::cin, (*book)[i].underwear);
+	std::cout << "Please enter contact's darkest secret." << std::endl;
+	getline(std::cin, (*book)[i].secret);
+	std::cout << std::endl;
 }
 
-int		main(void)
+int			main(void)
 {
 	Contact	*book;
-	string	cmd;
+	std::string	cmd;
 	int		i;
 
 	i = 0;
 	book = new Contact[8];
 	while (1)
 	{
-		getline(cin, cmd);
+		getline(std::cin, cmd);
 		if (cmd == "SEARCH")
 			search_book(book, i);
 		else if (cmd == "ADD")
@@ -109,12 +109,12 @@ int		main(void)
 			if (i < 8)
 				add_book(&book, i++);
 			else
-				cout << "Too many contacts, can't add anymore." << endl << endl;
+				std::cout << "Too many contacts, can't add anymore." << std::endl << std::endl;
 		}
 		else if (cmd == "EXIT")
 			break;
 		else
-			cout << "Invalid command." << endl << endl;
+			std::cout << "Invalid command." << std::endl << std::endl;
 	}
 	delete[] book;
 	return (0);

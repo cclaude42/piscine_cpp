@@ -14,5 +14,5 @@
 
 void	Zombie::announce(void)
 {
-	cout << "<" << _name << " (" << _type << ")> Braiiiiiiinnnssss..." << endl;
+	std::cout << "<" << _name << " (" << _type << ")> Braiiiiiiinnnssss..." << std::endl;
 }

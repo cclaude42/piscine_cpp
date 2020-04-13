@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/12 18:18:28 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/12 18:22:12 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/04/13 14:05:48 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	Zombie::announce(void)
 {
-	cout << "<" << _name << " (" << _type << ")> Braiiiiiiinnnssss..." << endl;
+	std::cout << "<" << _name << " (" << _type << ")> Braiiiiiiinnnssss..." << std::endl;
 }

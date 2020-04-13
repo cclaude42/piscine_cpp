@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/12 17:06:13 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/12 18:15:47 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/04/13 14:08:08 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,13 @@
 
 # include <iostream>
 
-using	std::string;
-using	std::cout;
-using	std::endl;
-
 class Pony {
 public:
 	Pony(std::string name);
 	~Pony(void);
 	void	feed(void);
 private:
-	string	_name;
+	std::string	_name;
 	bool	_hungry;
 };
 

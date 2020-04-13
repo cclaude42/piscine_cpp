@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/12 17:33:48 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/12 19:29:33 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/04/13 14:06:18 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,21 @@ void	Pony::feed(void)
 {
 	if (_hungry)
 	{
-		cout << "    You feed " << _name << " an apple." << endl;
+		std::cout << "    You feed " << _name << " an apple." << std::endl;
 		_hungry = false;
 	}
 	else
-		cout << "    " << _name << " isn't hungry." << endl;
+		std::cout << "    " << _name << " isn't hungry." << std::endl;
 }
 
-Pony::Pony(string name)
+Pony::Pony(std::string name)
 {
 	_name = name;
 	_hungry = true;
-	cout << "    Say hello to " << _name << " !"<< endl;
+	std::cout << "    Say hello to " << _name << " !"<< std::endl;
 }
 
 Pony::~Pony(void)
 {
-	cout << "    Say goodbye to " << _name << "..."<< endl;
+	std::cout << "    Say goodbye to " << _name << "..."<< std::endl;
 }
