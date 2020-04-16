@@ -25,6 +25,7 @@ $(NAME): $(OBJ)
 clean:
 	@echo "\033[0;31mCleaning..."
 	rm -f $(OBJ)
+	rm -f *.replace
 	@echo "\033[0m"
 
 fclean: clean
@@ -35,11 +36,20 @@ fclean: clean
 re: fclean all
 
 test: re
-	cp test.txt ex.txt
-	./replace ex.txt a oo
-	@echo "=============="
-	cat ex.txt
-	@echo "=============="
-	rm ex.txt
+	@echo "=== Original ==="
+	cat -e test.txt
+	@echo "================\n"
+	./replace test.txt a o
+	@echo "==== a => o ===="
+	cat -e test.txt.replace
+	@echo "================\n"
+	./replace test.txt a aaa
+	@echo "=== a => aaa ==="
+	cat -e test.txt.replace
+	@echo "================\n"
+	./replace test.txt an x
+	@echo "==== an => x ==="
+	cat -e test.txt.replace
+	@echo "================\n"
 
 .PHONY: all re clean fclean

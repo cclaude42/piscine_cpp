@@ -6,31 +6,37 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 17:50:26 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/13 19:49:01 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/04/16 13:27:59 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "replace.hpp"
 
-void	replace(std::fstream &file, std::string before, std::string after)
+void	replace(std::ifstream &file, std::string name, std::string from, std::string to)
 {
-	(void)before;
-	(void)after;
-	std::string	text;
-	std::size_t	pos;
+	std::ofstream	newfile;
+	std::string		text;
+	std::size_t		pos;
+	std::size_t		i = 0;
 
+	newfile.open(name + ".replace", std::ofstream::trunc);
 	std::getline(file, text, '\0');
-	pos = text.find(before);
-	if (pos != std::string::npos)
+	pos = text.find(from);
+	while (pos != std::string::npos)
 	{
-		text.replace(pos, after.size(), after);
+		while (i != pos)
+			newfile << text[i++];
+		newfile << to;
+		i += from.size();
+		pos = text.find(from, i);
 	}
-	std::cout << text << std::endl;
+	while (i != text.size())
+		newfile << text[i++];
 }
 
 int		main(int ac, char **av)
 {
-	std::fstream	file;
+	std::ifstream	file;
 
 	if (ac != 4)
 	{
@@ -46,7 +52,7 @@ int		main(int ac, char **av)
 		std::cout << "Second string is empty." << std::endl;
 	else
 	{
-		replace(file, av[2], av[3]);
+		replace(file, av[1], av[2], av[3]);
 		return (0);
 	}
 	file.close();
