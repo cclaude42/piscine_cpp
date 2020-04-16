@@ -52,4 +52,4 @@ test: re
 	cat -e test.txt.replace
 	@echo "================\n"
 
-.PHONY: all re clean fclean
+.PHONY: all re clean fclean test
