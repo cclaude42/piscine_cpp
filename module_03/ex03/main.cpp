@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/19 00:03:42 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/19 15:03:37 by cclaude          ###   ########.fr       */
+/*   Created: 2020/04/18 23:53:33 by cclaude           #+#    #+#             */
+/*   Updated: 2020/04/19 16:00:26 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
+#include "NinjaTrap.hpp"
 
-# include <iostream>
-# include "ClapTrap.hpp"
+int	main(void)
+{
+	NinjaTrap	ninja("Nobunaga");
+	FragTrap	frag("CU5TM-BT");
 
-class ScavTrap : public ClapTrap {
-public:
-	ScavTrap(void);
-	ScavTrap(std::string const & name);
-	ScavTrap(const ScavTrap & src);
-	~ScavTrap(void);
-
-	ScavTrap & operator=(const ScavTrap & src);
-
-	void	challengeNewcomer(std::string const & target);
-};
-
-#endif
+	ninja.ninjaShoebox(frag);
+}
