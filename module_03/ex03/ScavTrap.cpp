@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/19 00:09:51 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/19 15:44:06 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/04/19 20:32:55 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,14 @@ void	ScavTrap::challengeNewcomer(std::string const & target)
 	std::string	challs [5] = { "give your best pudding recipe", "spit over the wall there",
 	"beat the crap out of him", "eat skag and live to tell the tale", "get lost"};
 
-	std::cout << _type << " " << _name << " challenges ";
-	std::cout << target << " to " << challs[rand() % 5] << "!" << std::endl;
+	if (_nrg >= 25)
+	{
+		_nrg -= 25;
+		std::cout << "5C4V-TP " << _name << " challenges ";
+		std::cout << target << " to " << challs[rand() % 5] << "!" << std::endl;
+	}
+	else
+		std::cout << "5C4V-TP " << _name << " is out of energy!" << std::endl;
 }
 
 // Overloaders

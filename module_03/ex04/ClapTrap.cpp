@@ -1,49 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/19 00:09:51 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/19 20:32:22 by cclaude          ###   ########.fr       */
+/*   Created: 2020/04/19 00:38:53 by cclaude           #+#    #+#             */
+/*   Updated: 2020/04/19 15:45:21 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
 
-// Member functions
 
-void	ScavTrap::challengeNewcomer(std::string const & target)
+void	ClapTrap::rangedAttack(std::string const & target)
 {
-	std::string	challs [5] = { "give your best pudding recipe", "spit over the wall there",
-	"beat the crap out of him", "eat skag and live to tell the tale", "get lost"};
-
-	if (_nrg >= 25)
-	{
-		_nrg -= 25;
-		std::cout << "5C4V-TP " << _name << " challenges ";
-		std::cout << target << " to " << challs[rand() % 5] << "!" << std::endl;
-	}
-	else
-		std::cout << "5C4V-TP " << _name << " is out of energy!" << std::endl;
-}
-
-void	ScavTrap::rangedAttack(std::string const & target)
-{
-	std::cout << "5C4V-TP " << _name << " attacks " << target;
+	std::cout << _type << " " << _name << " attacks " << target;
 	std::cout << " at range, causing " << _ranged_atk;
 	std::cout << " points of damage!" << std::endl;
 }
 
-void	ScavTrap::meleeAttack(std::string const & target)
+void	ClapTrap::meleeAttack(std::string const & target)
 {
-	std::cout << "5C4V-TP " << _name << " attacks " << target;
+	std::cout << _type << " " << _name << " attacks " << target;
 	std::cout << " at melee, causing " << _melee_atk;
 	std::cout << " points of damage!" << std::endl;
 }
 
-void	ScavTrap::takeDamage(unsigned int amount)
+void	ClapTrap::takeDamage(unsigned int amount)
 {
 	amount -= _dmg_reduc;
 	if (amount < 0)
@@ -51,7 +35,7 @@ void	ScavTrap::takeDamage(unsigned int amount)
 	if (_hp < (int)amount)
 		amount = _hp;
 	_hp -= amount;
-	std::cout << "5C4V-TP " << _name << " takes ";
+	std::cout << _type << " " << _name << " takes ";
 	if (amount > 1)
 		std::cout << amount << " points of damage!" << std::endl;
 	else if (amount == 1)
@@ -59,15 +43,15 @@ void	ScavTrap::takeDamage(unsigned int amount)
 	else
 		std::cout << "no damage!" << std::endl;
 	if (_hp == 0)
-		std::cout << "5C4V-TP " << _name << "'s done for!" << std::endl;
+		std::cout << _type << " " << _name << "'s done for!" << std::endl;
 }
 
-void	ScavTrap::beRepaired(unsigned int amount)
+void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (_hp + (int)amount > _max_hp)
 		amount = _max_hp - _hp;
 	_hp += amount;
-	std::cout << "5C4V-TP " << _name << " heals ";
+	std::cout << _type << " " << _name << " heals ";
 	if (amount > 1)
 		std::cout << amount << " hit points!" << std::endl;
 	else if (amount == 1)
@@ -75,12 +59,12 @@ void	ScavTrap::beRepaired(unsigned int amount)
 	else
 		std::cout << "nothing!" << std::endl;
 	if (_hp == 100)
-		std::cout << "5C4V-TP " << _name << " is full health!" << std::endl;
+		std::cout << _type << " " << _name << " is full health!" << std::endl;
 }
 
 // Overloaders
 
-ScavTrap & ScavTrap::operator=(const ScavTrap & src)
+ClapTrap & ClapTrap::operator=(const ClapTrap & src)
 {
 	_hp = src._hp;
 	_max_hp = src._max_hp;
@@ -91,45 +75,50 @@ ScavTrap & ScavTrap::operator=(const ScavTrap & src)
 	_ranged_atk = src._ranged_atk;
 	_dmg_reduc = src._dmg_reduc;
 	_name = src._name;
+	_type = src._type;
 	return (*this);
 }
 
 // Constructors and destructors
 
-ScavTrap::ScavTrap(void)
+ClapTrap::ClapTrap(void)
 {
 	srand(time(0));
-	std::cout << "Scavtrap, ready to serve!" << std::endl;
+	std::cout << "<CL4P-TP> Generating Claptrap iteration..." << std::endl;
 	_hp = 100;
 	_max_hp = 100;
-	_nrg = 50;
-	_max_nrg = 50;
+	_nrg = 100;
+	_max_nrg = 100;
 	_lvl = 1;
-	_melee_atk = 20;
-	_ranged_atk = 15;
-	_dmg_reduc = 3;
+	_melee_atk = 30;
+	_ranged_atk = 20;
+	_dmg_reduc = 5;
 	_name = "INAC";
+	_type = "<CL4P-TP>";
 }
 
-ScavTrap::ScavTrap(std::string const & name)
+ClapTrap::ClapTrap(int hp, int max_hp, int nrg, int max_nrg, int lvl,
+					int melee_atk, int ranged_atk, int dmg_reduc,
+					std::string const & name, std::string const & type)
 {
 	srand(time(0));
-	std::cout << "Scavtrap, ready to serve!" << std::endl;
-	_hp = 100;
-	_max_hp = 100;
-	_nrg = 50;
-	_max_nrg = 50;
-	_lvl = 1;
-	_melee_atk = 20;
-	_ranged_atk = 15;
-	_dmg_reduc = 3;
+	std::cout << "<CL4P-TP> Generating Claptrap iteration..." << std::endl;
+	_hp = hp;
+	_max_hp = max_hp;
+	_nrg = nrg;
+	_max_nrg = max_nrg;
+	_lvl = lvl;
+	_melee_atk = melee_atk;
+	_ranged_atk = ranged_atk;
+	_dmg_reduc = dmg_reduc;
 	_name = name;
+	_type = type;
 }
 
-ScavTrap::ScavTrap(const ScavTrap & src)
+ClapTrap::ClapTrap(const ClapTrap & src)
 {
 	srand(time(0));
-	std::cout << "Scavtrap, passing on responsibilities!" << std::endl;
+	std::cout << "<CL4P-TP> Claptrap, duplicating!" << std::endl;
 	_hp = src._hp;
 	_max_hp = src._max_hp;
 	_nrg = src._nrg;
@@ -139,9 +128,10 @@ ScavTrap::ScavTrap(const ScavTrap & src)
 	_ranged_atk = src._ranged_atk;
 	_dmg_reduc = src._dmg_reduc;
 	_name = src._name;
+	_type = src._type;
 }
 
-ScavTrap::~ScavTrap(void)
+ClapTrap::~ClapTrap(void)
 {
-	std::cout << "I'm too pretty to die!" << std::endl;
+	std::cout << "<CL4P-TP> Aww..." << std::endl;
 }

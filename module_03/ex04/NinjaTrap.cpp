@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/19 15:50:07 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/19 20:34:16 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/04/19 20:35:07 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	NinjaTrap::ninjaShoebox(const ClapTrap & target)
 		std::cout << _type << " " << _name << " uses his special move on ";
 		std::cout << "ClapTrap : robot arm death slash!" << std::endl;
 	}
+	else
+		std::cout << "5C4V-TP " << _name << " is out of energy!" << std::endl;
 }
 
 void	NinjaTrap::ninjaShoebox(const FragTrap & target)
@@ -34,6 +36,8 @@ void	NinjaTrap::ninjaShoebox(const FragTrap & target)
 		std::cout << _type << " " << _name << " uses his special move on ";
 		std::cout << "FragTrap : dysfunction blinding smoke!" << std::endl;
 	}
+	else
+		std::cout << "5C4V-TP " << _name << " is out of energy!" << std::endl;
 }
 
 void	NinjaTrap::ninjaShoebox(const ScavTrap & target)
@@ -45,6 +49,8 @@ void	NinjaTrap::ninjaShoebox(const ScavTrap & target)
 		std::cout << _type << " " << _name << " uses his special move on ";
 		std::cout << "ScavTrap : sand-skag egg-throw!" << std::endl;
 	}
+	else
+		std::cout << "5C4V-TP " << _name << " is out of energy!" << std::endl;
 }
 
 void	NinjaTrap::ninjaShoebox(const NinjaTrap & target)
@@ -56,6 +62,8 @@ void	NinjaTrap::ninjaShoebox(const NinjaTrap & target)
 		std::cout << _type << " " << _name << " uses his special move on ";
 		std::cout << "NinjaTrap : terrified seppuku!" << std::endl;
 	}
+	else
+		std::cout << "5C4V-TP " << _name << " is out of energy!" << std::endl;
 }
 
 // Overloaders
