@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/24 14:41:11 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/24 14:59:54 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/04/24 15:00:42 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ int main()
 		cur->rangedAttack();
 		cur->meleeAttack();
 	}
-
-	std::cout << vlc->getCount() << " marines" << std::endl;
 
 	delete vlc;
 	return 0;
