@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
+/*   MiningBarge.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/24 18:06:58 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/26 14:12:50 by cclaude          ###   ########.fr       */
+/*   Created: 2020/04/26 15:11:25 by cclaude           #+#    #+#             */
+/*   Updated: 2020/04/26 15:45:25 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef IMATERIASOURCE_HPP
-# define IMATERIASOURCE_HPP
+#ifndef MININGBARGE_HPP
+# define MININGBARGE_HPP
 
 # include <iostream>
-# include "AMateria.hpp"
+# include "IMiningLaser.hpp"
+# include "IAsteroid.hpp"
 
-class IMateriaSource
+class MiningBarge
 {
 public:
-	virtual ~IMateriaSource() {}
-	virtual void learnMateria(AMateria* ptr) = 0;
-	virtual AMateria* createMateria(std::string const & type) = 0;
+	MiningBarge(void);
+	MiningBarge(const MiningBarge & src);
+	~MiningBarge(void);
+
+	MiningBarge & operator=(const MiningBarge & src);
+
+	void equip(IMiningLaser* laser);
+	void mine(IAsteroid* target) const;
+private:
+	IMiningLaser*	_tab[4];
 };
 
 #endif

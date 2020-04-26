@@ -1,51 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   Comet.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/24 17:50:29 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/26 14:00:24 by cclaude          ###   ########.fr       */
+/*   Created: 2020/04/26 15:05:06 by cclaude           #+#    #+#             */
+/*   Updated: 2020/04/26 15:43:59 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#include "Comet.hpp"
+#include "DeepCoreMiner.hpp"
+#include "StripMiner.hpp"
 
 // Member functions
 
-AMateria*	Ice::clone(void) const
+std::string	Comet::beMined(DeepCoreMiner* laser) const
 {
-	AMateria* ptr = new Ice;
-	return (ptr);
+	(void)laser;
+	return ("Meium");
 }
 
-void		Ice::use(ICharacter& target)
+std::string	Comet::beMined(StripMiner* laser) const
 {
-	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+	(void)laser;
+	return ("Tartarite");
+}
+
+std::string	Comet::getName(void) const
+{
+	return ("Comet");
 }
 
 // Overloaders
 
-Ice & Ice::operator=(const Ice & src)
+Comet & Comet::operator=(const Comet & src)
 {
-	unsigned int	i;
-
-	for (i = 0 ; i < src.getXP() / 10 ; i++)
-		this->progress();
+	(void)src;
 	return (*this);
 }
 
 // Constructors and destructors
 
-Ice::Ice(void) : AMateria("ice")
+Comet::Comet(void)
 {
 }
 
-Ice::Ice(const Ice & src) : AMateria(src)
+Comet::Comet(const Comet & src)
 {
+	(void)src;
 }
 
-Ice::~Ice(void)
+Comet::~Comet(void)
 {
 }

@@ -1,51 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   StripMiner.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/24 17:50:29 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/26 14:00:24 by cclaude          ###   ########.fr       */
+/*   Created: 2020/04/26 14:55:58 by cclaude           #+#    #+#             */
+/*   Updated: 2020/04/26 15:45:37 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#include "StripMiner.hpp"
+#include "IAsteroid.hpp"
 
 // Member functions
 
-AMateria*	Ice::clone(void) const
+void	StripMiner::mine(IAsteroid* target)
 {
-	AMateria* ptr = new Ice;
-	return (ptr);
-}
-
-void		Ice::use(ICharacter& target)
-{
-	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+	std::cout << "* strip mining... got " << target->beMined(this) << "! *" << std::endl;
 }
 
 // Overloaders
 
-Ice & Ice::operator=(const Ice & src)
+StripMiner & StripMiner::operator=(const StripMiner & src)
 {
-	unsigned int	i;
-
-	for (i = 0 ; i < src.getXP() / 10 ; i++)
-		this->progress();
+	(void)src;
 	return (*this);
 }
 
 // Constructors and destructors
 
-Ice::Ice(void) : AMateria("ice")
+StripMiner::StripMiner(void)
 {
 }
 
-Ice::Ice(const Ice & src) : AMateria(src)
+StripMiner::StripMiner(const StripMiner & src)
 {
+	(void)src;
 }
 
-Ice::~Ice(void)
+StripMiner::~StripMiner(void)
 {
 }

@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
+/*   Comet.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/24 18:06:58 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/26 14:12:50 by cclaude          ###   ########.fr       */
+/*   Created: 2020/04/26 15:05:06 by cclaude           #+#    #+#             */
+/*   Updated: 2020/04/26 15:46:05 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef IMATERIASOURCE_HPP
-# define IMATERIASOURCE_HPP
+#ifndef COMET_HPP
+# define COMET_HPP
 
 # include <iostream>
-# include "AMateria.hpp"
+# include "IAsteroid.hpp"
 
-class IMateriaSource
-{
+class DeepCoreMiner;
+class StripMiner;
+
+class Comet : public IAsteroid {
 public:
-	virtual ~IMateriaSource() {}
-	virtual void learnMateria(AMateria* ptr) = 0;
-	virtual AMateria* createMateria(std::string const & type) = 0;
+	Comet(void);
+	Comet(const Comet & src);
+	~Comet(void);
+
+	Comet & operator=(const Comet & src);
+
+	std::string beMined(DeepCoreMiner* laser) const;
+	std::string beMined(StripMiner* laser) const;
+	std::string getName(void) const;
 };
 
 #endif

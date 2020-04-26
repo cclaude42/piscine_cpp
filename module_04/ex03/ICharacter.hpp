@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/24 18:05:59 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/24 18:06:15 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/04/26 14:14:35 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define ICHARACTER_HPP
 
 # include <iostream>
+# include "AMateria.hpp"
+
+class AMateria;
 
 class ICharacter
 {

@@ -1,51 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   DeepCoreMiner.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/24 17:50:29 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/26 14:00:24 by cclaude          ###   ########.fr       */
+/*   Created: 2020/04/26 14:48:43 by cclaude           #+#    #+#             */
+/*   Updated: 2020/04/26 15:44:51 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#include "DeepCoreMiner.hpp"
+#include "IAsteroid.hpp"
 
 // Member functions
 
-AMateria*	Ice::clone(void) const
+void	DeepCoreMiner::mine(IAsteroid* target)
 {
-	AMateria* ptr = new Ice;
-	return (ptr);
-}
-
-void		Ice::use(ICharacter& target)
-{
-	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+	std::cout << "* mining deep... got " << target->beMined(this) << "! *" << std::endl;
 }
 
 // Overloaders
 
-Ice & Ice::operator=(const Ice & src)
+DeepCoreMiner & DeepCoreMiner::operator=(const DeepCoreMiner & src)
 {
-	unsigned int	i;
-
-	for (i = 0 ; i < src.getXP() / 10 ; i++)
-		this->progress();
+	(void)src;
 	return (*this);
 }
 
 // Constructors and destructors
 
-Ice::Ice(void) : AMateria("ice")
+DeepCoreMiner::DeepCoreMiner(void)
 {
 }
 
-Ice::Ice(const Ice & src) : AMateria(src)
+DeepCoreMiner::DeepCoreMiner(const DeepCoreMiner & src)
 {
+	(void)src;
 }
 
-Ice::~Ice(void)
+DeepCoreMiner::~DeepCoreMiner(void)
 {
 }

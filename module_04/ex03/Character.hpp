@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/24 18:27:28 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/24 18:34:59 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/04/26 12:57:00 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ private:
 	Character(void);
 
 	std::string	_name;
-	AMateria*	_tab;
+	AMateria*	_tab[4];
 };
 
 #endif

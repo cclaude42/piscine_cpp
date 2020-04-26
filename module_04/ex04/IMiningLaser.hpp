@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
+/*   IMiningLaser.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/24 18:06:58 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/26 14:12:50 by cclaude          ###   ########.fr       */
+/*   Created: 2020/04/26 14:46:24 by cclaude           #+#    #+#             */
+/*   Updated: 2020/04/26 15:42:07 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef IMATERIASOURCE_HPP
-# define IMATERIASOURCE_HPP
+#ifndef IMININGLASER_HPP
+# define IMININGLASER_HPP
 
 # include <iostream>
-# include "AMateria.hpp"
 
-class IMateriaSource
+class IAsteroid;
+
+class IMiningLaser
 {
 public:
-	virtual ~IMateriaSource() {}
-	virtual void learnMateria(AMateria* ptr) = 0;
-	virtual AMateria* createMateria(std::string const & type) = 0;
+	virtual ~IMiningLaser() {}
+	virtual void mine(IAsteroid* target) = 0;
 };
 
 #endif

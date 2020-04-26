@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/24 18:01:41 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/24 18:02:02 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/04/26 13:34:02 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include "AMateria.hpp"
+# include "ICharacter.hpp"
 
 class Cure : public AMateria {
 public:

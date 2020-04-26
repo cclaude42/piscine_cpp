@@ -1,51 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   Asteroid.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/24 17:50:29 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/26 14:00:24 by cclaude          ###   ########.fr       */
+/*   Created: 2020/04/26 15:00:44 by cclaude           #+#    #+#             */
+/*   Updated: 2020/04/26 15:43:53 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#include "Asteroid.hpp"
+#include "DeepCoreMiner.hpp"
+#include "StripMiner.hpp"
 
 // Member functions
 
-AMateria*	Ice::clone(void) const
+std::string	Asteroid::beMined(DeepCoreMiner* laser) const
 {
-	AMateria* ptr = new Ice;
-	return (ptr);
+	(void)laser;
+	return ("Dragonite");
 }
 
-void		Ice::use(ICharacter& target)
+std::string	Asteroid::beMined(StripMiner* laser) const
 {
-	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+	(void)laser;
+	return ("Flavium");
+}
+
+std::string	Asteroid::getName(void) const
+{
+	return ("Asteroid");
 }
 
 // Overloaders
 
-Ice & Ice::operator=(const Ice & src)
+Asteroid & Asteroid::operator=(const Asteroid & src)
 {
-	unsigned int	i;
-
-	for (i = 0 ; i < src.getXP() / 10 ; i++)
-		this->progress();
+	(void)src;
 	return (*this);
 }
 
 // Constructors and destructors
 
-Ice::Ice(void) : AMateria("ice")
+Asteroid::Asteroid(void)
 {
 }
 
-Ice::Ice(const Ice & src) : AMateria(src)
+Asteroid::Asteroid(const Asteroid & src)
 {
+	(void)src;
 }
 
-Ice::~Ice(void)
+Asteroid::~Asteroid(void)
 {
 }

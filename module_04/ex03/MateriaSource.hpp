@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/24 18:06:58 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/26 14:12:50 by cclaude          ###   ########.fr       */
+/*   Created: 2020/04/26 13:12:34 by cclaude           #+#    #+#             */
+/*   Updated: 2020/04/26 13:22:13 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef IMATERIASOURCE_HPP
-# define IMATERIASOURCE_HPP
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
 
 # include <iostream>
-# include "AMateria.hpp"
+# include "IMateriaSource.hpp"
 
-class IMateriaSource
-{
+class MateriaSource : public IMateriaSource {
 public:
-	virtual ~IMateriaSource() {}
-	virtual void learnMateria(AMateria* ptr) = 0;
-	virtual AMateria* createMateria(std::string const & type) = 0;
+	MateriaSource(void);
+	MateriaSource(const MateriaSource & src);
+	~MateriaSource(void);
+
+	MateriaSource & operator=(const MateriaSource & src);
+
+	void		learnMateria(AMateria* ptr);
+	AMateria*	createMateria(std::string const & type);
+private:
+	AMateria*	_tab[4];
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/24 18:01:41 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/24 18:02:57 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/04/26 14:00:18 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,11 @@ void		Cure::use(ICharacter& target)
 
 Cure & Cure::operator=(const Cure & src)
 {
-	_xp = src.getXP();
-	return (*this)
+	unsigned int	i;
+
+	for (i = 0 ; i < src.getXP() / 10 ; i++)
+		this->progress();
+	return (*this);
 }
 
 // Constructors and destructors
