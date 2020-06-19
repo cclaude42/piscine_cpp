@@ -13,6 +13,8 @@ else
 	usr=$2
 fi
 
+upper=$(echo $1 | tr a-z A-Z)
+
 touch $1.hpp
 printf "/* ************************************************************************** */\n" >> $1.hpp
 printf "/*                                                                            */\n" >> $1.hpp
@@ -26,8 +28,10 @@ printf "/*   Updated: %-19.19s by %-15.15s  ###   ########.fr       */\n" "$(dat
 printf "/*                                                                            */\n" >> $1.hpp
 printf "/* ************************************************************************** */\n" >> $1.hpp
 printf "\n" >> $1.hpp
-printf "#ifndef ${1^^}_HPP\n" >> $1.hpp
-printf "# define ${1^^}_HPP\n" >> $1.hpp
+printf "#ifndef $upper" >> $1.hpp
+printf "_HPP\n" >> $1.hpp
+printf "# define $upper" >> $1.hpp
+printf "_HPP\n" >> $1.hpp
 printf "\n" >> $1.hpp
 printf "# include <iostream>\n" >> $1.hpp
 printf "\n" >> $1.hpp
