@@ -27,14 +27,14 @@ int					Bureaucrat::getGrade(void) const
 void				Bureaucrat::incGrade(void)
 {
 	if (_grade == 1)
-		throw Bureaucrat::GradeTooHighException();
+		throw Bureaucrat::GradeTooHighException("Grade Too High!");
 	_grade--;
 }
 
 void				Bureaucrat::decGrade(void)
 {
 	if (_grade == 150)
-		throw Bureaucrat::GradeTooLowException();
+		throw Bureaucrat::GradeTooLowException("Grade Too Low!");
 	_grade++;
 }
 
@@ -64,9 +64,9 @@ Bureaucrat::Bureaucrat(void)
 Bureaucrat::Bureaucrat(const std::string name, int grade)
 {
 	if (grade < 1)
-		throw Bureaucrat::GradeTooHighException();
+		throw Bureaucrat::GradeTooHighException("Grade Too High!");
 	else if (grade > 150)
-		throw Bureaucrat::GradeTooLowException();
+		throw Bureaucrat::GradeTooLowException("Grade Too Low!");
 	_name = name;
 	_grade = grade;
 }

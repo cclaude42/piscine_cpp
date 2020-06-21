@@ -17,6 +17,19 @@
 
 class Bureaucrat {
 public:
+
+	class GradeTooHighException : public std::runtime_error
+	{
+	public:
+		GradeTooHighException(std::string msg) : std::runtime_error(msg) {}
+	};
+
+	class GradeTooLowException : public std::runtime_error
+	{
+	public:
+		GradeTooLowException(std::string msg) : std::runtime_error(msg) {}
+	};
+
 	Bureaucrat(const std::string name, int grade);
 	Bureaucrat(const Bureaucrat & src);
 	~Bureaucrat(void);

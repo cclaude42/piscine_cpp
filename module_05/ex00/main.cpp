@@ -16,7 +16,11 @@ int	main(void)
 {
 	try
 	{
-		Bureaucrat	john("John", 0);
+		Bureaucrat	john("John", 2);
+		std::cout << john << std::endl;
+		john.incGrade();
+		std::cout << john << std::endl;
+		john.incGrade();
 		std::cout << john << std::endl;
 	}
 	catch (std::exception & e)
