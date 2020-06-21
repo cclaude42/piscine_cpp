@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 // Member functions
 
@@ -36,6 +37,20 @@ void				Bureaucrat::decGrade(void)
 	if (_grade == 150)
 		throw Bureaucrat::GradeTooLowException("Grade Too Low!");
 	_grade++;
+}
+
+void				Bureaucrat::signForm(Form & form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->getName() << " signs form " << form.getName() << std::endl;
+	}
+	catch (std::exception & e)
+	{
+		std::cout << this->getName() << " cannot sign form " << form.getName();
+		std::cout << " because " << e.what() << std::endl;
+	}
 }
 
 // Overloaders

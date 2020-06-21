@@ -14,6 +14,7 @@
 # define BUREAUCRAT_HPP
 
 # include <iostream>
+# include "Form.hpp"
 
 class Bureaucrat {
 public:
@@ -40,6 +41,7 @@ public:
 	int					getGrade() const;
 	void				incGrade();
 	void				decGrade();
+	void				signForm(Form & form);
 
 private:
 	Bureaucrat(void);
