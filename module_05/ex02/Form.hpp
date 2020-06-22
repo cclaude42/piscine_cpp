@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/21 15:21:07 by cclaude           #+#    #+#             */
-/*   Updated: 2020/06/21 15:21:07 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/06/22 13:32:09 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ public:
 	void				setTarget(std::string target);
 	void				beSigned(Bureaucrat const & signee);
 	void				execute(Bureaucrat const & executor) const;
-	void				action(void) const;
+	virtual void		action(void) const;
 
 private:
 	Form(void);

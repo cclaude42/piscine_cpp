@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/19 15:35:59 by cclaude           #+#    #+#             */
-/*   Updated: 2020/06/19 17:51:22 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/06/22 13:37:28 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,20 @@ void				Bureaucrat::signForm(Form & form)
 	catch (std::exception & e)
 	{
 		std::cout << this->getName() << " cannot sign form " << form.getName();
+		std::cout << " because " << e.what() << std::endl;
+	}
+}
+
+void				Bureaucrat::executeForm(Form & form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->getName() << " executed form " << form.getName() << std::endl;
+	}
+	catch (std::exception & e)
+	{
+		std::cout << this->getName() << " cannot execute form " << form.getName();
 		std::cout << " because " << e.what() << std::endl;
 	}
 }

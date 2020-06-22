@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/19 15:35:59 by cclaude           #+#    #+#             */
-/*   Updated: 2020/06/19 17:51:30 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/06/22 13:40:42 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ public:
 	void				incGrade();
 	void				decGrade();
 	void				signForm(Form & form);
+	void				executeForm(Form & form);
 
 private:
 	Bureaucrat(void);

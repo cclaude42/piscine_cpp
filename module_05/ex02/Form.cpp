@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/21 15:21:07 by cclaude           #+#    #+#             */
-/*   Updated: 2020/06/21 15:21:07 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/06/22 13:33:01 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void				Form::setTarget(std::string target)
 void				Form::beSigned(const Bureaucrat & signee)
 {
 	if (signee.getGrade() > _signGrade)
-		throw Form::GradeTooLowException("it requires a higher bureaucrat grade");
+		throw Form::GradeTooLowException("form requires a higher bureaucrat grade");
 	else
 		_signed = true;
 }
@@ -56,9 +56,9 @@ void				Form::beSigned(const Bureaucrat & signee)
 void				Form::execute(Bureaucrat const & executor) const
 {
 	if (executor.getGrade() > _execGrade)
-		throw Form::GradeTooLowException("it requires a higher bureaucrat grade");
+		throw Form::GradeTooLowException("form requires a higher bureaucrat grade");
 	else if (_signed == false)
-		throw Form::FormNotSignedException("it needs to be signed");
+		throw Form::FormNotSignedException("form needs to be signed");
 	else
 		this->action();
 }
