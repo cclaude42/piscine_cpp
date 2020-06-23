@@ -6,10 +6,11 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/19 16:11:11 by cclaude           #+#    #+#             */
-/*   Updated: 2020/06/22 18:47:20 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/06/23 12:44:26 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
@@ -17,35 +18,28 @@
 #include "PresidentialPardonForm.hpp"
 #include "Intern.hpp"
 #include "OfficeBlock.hpp"
+#include "CentralBureaucracy.hpp"
 
 int	main(void)
 {
-	Intern		*intern = new Intern;
-	Bureaucrat	*signee = new Bureaucrat("John", 10);
-	Bureaucrat	*executor = new Bureaucrat("Jack", 1);
+	CentralBureaucracy	center;
+	std::string			targets [20] = { "Demetrius", "Adolfo", "Cyril", "Ivory",
+	"Emmanuel", "Chi", "Damion", "Major", "Keenan", "Graig", "Jess", "Arlie",
+	"Rudy", "Chet", "Adrian", "Palmer", "Sylvester", "Erasmo", "Emanuel", "Zane" };
 
-	OfficeBlock	block;
+	srand(time(0));
 
-	block.setIntern(intern);
-	block.setSignee(signee);
-	block.setExecutor(executor);
+	for (int i = 0 ; i < 42 ; i++ )
+	{
+		Bureaucrat	bureaucrat;
 
-	try
-	{
-		block.doBureaucracy("presidential pardon", "Jerry Smith");
-	}
-	catch (OfficeBlock::UnkownFormException & e)
-	{
-		std::cout << "Form demanded doesn't match any available form." << std::endl;
-	}
-	catch (std::exception & e)
-	{
-		std::cout << "Exception : " << e.what() << std::endl;
+		center.feedBureaucrat(bureaucrat);
 	}
 
-	delete intern;
-	delete signee;
-	delete executor;
+	for (int i = 0 ; i < 21 ; i++ )
+		center.queueUp(targets[rand() % 20]);
+
+	center.doBureaucracy();
 
 	return (0);
 }

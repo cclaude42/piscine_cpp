@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 17:21:57 by cclaude           #+#    #+#             */
-/*   Updated: 2020/06/22 18:43:23 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/06/23 12:16:25 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@
 
 class OfficeBlock {
 public:
+
+	class EmptyTargetException : public std::runtime_error
+	{
+	public:
+		EmptyTargetException(std::string msg) : std::runtime_error(msg) {}
+	};
 
 	class InternNotSetException : public std::runtime_error
 	{
@@ -49,13 +55,18 @@ public:
 	};
 
 	OfficeBlock(void);
-	OfficeBlock(Intern * intern, Bureaucrat * signee, Bureaucrat * executor);
+	OfficeBlock(Intern & intern, Bureaucrat & signee, Bureaucrat & executor);
 	~OfficeBlock(void);
 
-	void	setIntern(Intern * intern);
-	void	setSignee(Bureaucrat * signee);
-	void	setExecutor(Bureaucrat * executor);
-	void	doBureaucracy(std::string form, std::string target);
+	Intern		*getIntern(void);
+	Bureaucrat	*getSignee(void);
+	Bureaucrat	*getExecutor(void);
+
+	void		setIntern(Intern & intern);
+	void		setSignee(Bureaucrat & signee);
+	void		setExecutor(Bureaucrat & executor);
+
+	void		doBureaucracy(std::string form, std::string target);
 
 private:
 	Intern *		_intern;

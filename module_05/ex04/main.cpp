@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/19 16:11:11 by cclaude           #+#    #+#             */
-/*   Updated: 2020/06/22 18:47:20 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/06/23 11:37:26 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 
 int	main(void)
 {
-	Intern		*intern = new Intern;
-	Bureaucrat	*signee = new Bureaucrat("John", 10);
-	Bureaucrat	*executor = new Bureaucrat("Jack", 1);
+	Intern		intern;
+	Bureaucrat	signee("John", 10);
+	Bureaucrat	executor("Jack", 1);
 
 	OfficeBlock	block;
 
@@ -42,10 +42,6 @@ int	main(void)
 	{
 		std::cout << "Exception : " << e.what() << std::endl;
 	}
-
-	delete intern;
-	delete signee;
-	delete executor;
 
 	return (0);
 }

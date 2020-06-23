@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/19 15:35:59 by cclaude           #+#    #+#             */
-/*   Updated: 2020/06/22 17:19:07 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/06/23 11:54:35 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ public:
 		GradeTooLowException(std::string msg) : std::runtime_error(msg) {}
 	};
 
+	Bureaucrat(void);
 	Bureaucrat(const std::string name, int grade);
 	Bureaucrat(const Bureaucrat & src);
 	~Bureaucrat(void);
@@ -45,10 +46,9 @@ public:
 	void				executeForm(Form & form);
 
 private:
-	Bureaucrat(void);
 
-	const std::string	_name;
-	int					_grade;
+	std::string	_name;
+	int			_grade;
 };
 
 std::ostream & operator<<(std::ostream & os, const Bureaucrat & src);

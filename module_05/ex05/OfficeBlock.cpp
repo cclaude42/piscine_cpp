@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 17:21:57 by cclaude           #+#    #+#             */
-/*   Updated: 2020/06/22 18:45:05 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/06/23 12:41:40 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,43 @@
 
 // Member functions
 
-void	OfficeBlock::setIntern(Intern * intern)
+Intern		*OfficeBlock::getIntern(void)
 {
-	_intern = intern;
+	return (_intern);
 }
 
-void	OfficeBlock::setSignee(Bureaucrat * signee)
+Bureaucrat	*OfficeBlock::getSignee(void)
 {
-	_signee = signee;
+	return (_signee);
 }
 
-void	OfficeBlock::setExecutor(Bureaucrat * executor)
+Bureaucrat	*OfficeBlock::getExecutor(void)
 {
-	_executor = executor;
+	return (_executor);
 }
 
-void	OfficeBlock::doBureaucracy(std::string form, std::string target)
+void		OfficeBlock::setIntern(Intern & intern)
+{
+	if (_intern != 0)
+		delete _intern;
+	_intern = new Intern(intern);
+}
+
+void		OfficeBlock::setSignee(Bureaucrat & signee)
+{
+	if (_signee != 0)
+		delete _signee;
+	_signee = new Bureaucrat(signee);
+}
+
+void		OfficeBlock::setExecutor(Bureaucrat & executor)
+{
+	if (_executor != 0)
+		delete _executor;
+	_executor = new Bureaucrat(executor);
+}
+
+void		OfficeBlock::doBureaucracy(std::string form, std::string target)
 {
 	Form	*form_ptr;
 
@@ -39,6 +60,8 @@ void	OfficeBlock::doBureaucracy(std::string form, std::string target)
 		throw OfficeBlock::SigneeNotSetException("Signee not set !");
 	else if (_executor == 0)
 		throw OfficeBlock::ExecutorNotSetException("Executor not set !");
+	else if (target == "")
+		throw OfficeBlock::EmptyTargetException("There is no target !");
 	form_ptr = _intern->makeForm(form, target);
 	if (form_ptr == 0)
 		throw OfficeBlock::UnkownFormException("Form type unknown !");
@@ -55,13 +78,19 @@ OfficeBlock::OfficeBlock(void)
 	_executor = 0;
 }
 
-OfficeBlock::OfficeBlock(Intern * intern, Bureaucrat * signee, Bureaucrat * executor)
+OfficeBlock::OfficeBlock(Intern & intern, Bureaucrat & signee, Bureaucrat & executor)
 {
-	_intern = intern;
-	_signee = signee;
-	_executor = executor;
+	_intern = new Intern(intern);
+	_signee = new Bureaucrat(signee);
+	_executor = new Bureaucrat(executor);
 }
 
 OfficeBlock::~OfficeBlock(void)
 {
+	if (_intern != 0)
+		delete _intern;
+	if (_signee != 0)
+		delete _signee;
+	if (_executor != 0)
+		delete _executor;
 }

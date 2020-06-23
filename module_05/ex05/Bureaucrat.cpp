@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/19 15:35:59 by cclaude           #+#    #+#             */
-/*   Updated: 2020/06/22 17:18:42 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/06/23 12:02:14 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void				Bureaucrat::executeForm(Form & form)
 std::ostream & operator<<(std::ostream & os, const Bureaucrat & src)
 {
 	os << src.getName() << ", bureaucrat grade ";
-	os << src.getGrade() << ", at your disservice !";
+	os << src.getGrade();
 	return (os);
 }
 
@@ -86,7 +86,13 @@ Bureaucrat & Bureaucrat::operator=(const Bureaucrat & src)
 
 Bureaucrat::Bureaucrat(void)
 {
-	// Wait, that's illegal !
+	std::string	names [20] = { "Dalton", "Clyde", "Jesus", "Truman", "Demarcus",
+								"Brock", "Lynn", "Quinn", "Walt", "Joe", "Jesse",
+								"Jared", "Wilburn", "Len", "Ricardo", "Donnie",
+								"Giuseppe", "Clement", "Gregory", "Orville" };
+
+	_name = names[rand() % 20];
+	_grade = rand() % 150 + 1;
 }
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
