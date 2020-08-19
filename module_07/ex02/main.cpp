@@ -6,30 +6,65 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/18 16:58:40 by cclaude           #+#    #+#             */
-/*   Updated: 2020/08/18 17:56:26 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/08/19 12:53:40 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.tpp"
 #include "Array.cpp"
 
+template <class T>
+void	print_array(Array<T> &t)
+{
+	for (int i = 0 ; i < t.size() ; i++)
+		std::cout << t[i] << std::endl;
+	std::cout << "----------" << std::endl;
+}
+
 int	main(void)
 {
 	Array<int>	arr(5);
 
-	std::cout << arr[0] << std::endl;
-	std::cout << arr[1] << std::endl;
-	std::cout << arr[2] << std::endl;
-	std::cout << arr[3] << std::endl;
-	std::cout << arr[4] << std::endl;
+	arr[0] = 4;
+	arr[2] = -12;
 
-	Array<std::string>	brr(5);
+	std::cout << "A :"<< std::endl;
+	print_array(arr);
 
-	std::cout << brr[0] << std::endl;
-	std::cout << brr[1] << std::endl;
-	std::cout << brr[2] << std::endl;
-	std::cout << brr[3] << std::endl;
-	std::cout << brr[4] << std::endl;
+	Array<int>	brr(5);
+
+	std::cout << "B (empty) :"<< std::endl;
+	print_array(brr);
+	std::cout << "B (A assignment) :" << std::endl;
+	brr = arr;
+	print_array(brr);
+
+	Array<int>	crr(arr);
+
+	std::cout << "C (A copy): " << std::endl;
+	print_array(crr);
+
+	std::cout << "A (unchanged when B / C changed):" << std::endl;
+	brr[1] = -1;
+	crr[3] = 5;
+	print_array(arr);
+
+	Array<int>	drr(7);
+
+	std::cout << "D (copy of A, different size): " << std::endl;
+	drr = arr;
+	print_array(drr);
+
+	Array<std::string>	err(3);
+
+	err[1] = "hello";
+	err[2] = "world";
+
+	std::cout << "E (string array) :"<< std::endl;
+	print_array(err);
+
+	std::cout << "(Commented) A<int> = E<string> (does not compile): " << std::endl;
+	// arr = err;
 
 	return (0);
 }

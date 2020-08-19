@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/18 16:02:29 by cclaude           #+#    #+#             */
-/*   Updated: 2020/08/18 17:57:27 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/08/19 12:48:43 by cclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 // Member functions
 
 template <class T>
-int		Array<T>::size(void)
+int		Array<T>::size(void) const
 {
-	return (size);
+	return (_size);
 }
 
 // Overloaders
@@ -25,12 +25,13 @@ int		Array<T>::size(void)
 template <class T>
 Array<T>	& Array<T>::operator=(const Array & src)
 {
-	for (unsigned int i = 0 ; i < _size ; i++)
+	for (int i = 0 ; (i < _size && i < src.size()) ; i++)
 		_arr[i] = src[i];
+	return (*this);
 }
 
 template <class T>
-T		& Array<T>::operator[](unsigned int i)
+T		& Array<T>::operator[](int i) const
 {
 	if (i < 0 || i >= _size)
 		throw std::runtime_error("Out of limits");
@@ -51,9 +52,9 @@ Array<T>::Array(unsigned int n)
 {
 	T	*ptr = new T();
 
-	_size = n;
+	_size = (int)n;
 	_arr = new T[_size];
-	for (unsigned int i = 0 ; i < _size ; i++)
+	for (int i = 0 ; i < _size ; i++)
 		_arr[i] = *ptr;
 }
 
@@ -62,7 +63,7 @@ Array<T>::Array(const Array & src)
 {
 	_size = src.size();
 	_arr = new T[_size];
-	for (unsigned int i = 0 ; i < _size ; i++)
+	for (int i = 0 ; i < _size ; i++)
 		_arr[i] = src[i];
 }
 

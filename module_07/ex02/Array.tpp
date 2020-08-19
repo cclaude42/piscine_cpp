@@ -24,13 +24,13 @@ public:
 	~Array(void);
 
 	Array	&operator=(const Array & src);
-	T		&operator[](unsigned int i);
+	T		&operator[](int i) const;
 
-	int	size(void);
+	int	size(void) const;
 
 private:
 	T				*_arr;
-	unsigned int	_size;
+	int	_size;
 };
 
 #endif
