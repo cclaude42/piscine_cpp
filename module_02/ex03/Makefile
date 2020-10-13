@@ -2,7 +2,7 @@ NAME = eval_expr
 
 CC = clang++
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = eval_expr.cpp \
 	Fixed.cpp

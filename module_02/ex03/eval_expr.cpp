@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/17 18:12:23 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/18 15:57:55 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/13 18:24:49 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,9 +107,9 @@ void	eval_expr(std::string expr, int n)
 		else if (token == ")")
 			par -= 2;
 		else if (token.find('.') == std::string::npos)
-			num[i++] = Fixed(stoi(token));
+			num[i++] = Fixed(atoi(token.c_str()));
 		else
-			num[i++] = Fixed(stof(token));
+			num[i++] = Fixed((float)atof(token.c_str()));
 		expr.erase(0, pos + 1);
 	}
 	resolve(num, oper, prio, n);
