@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/16 17:26:03 by cclaude           #+#    #+#             */
-/*   Updated: 2020/10/13 13:21:22 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/13 13:59:25 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,11 @@ int	main(int ac, char **av)
 		std::cout << text;
 		file.close();
 	}
-	while (ac == 1 && std::cin >> text)
+	while (ac == 1)
+	{
+		if (!(std::cin >> text))
+			return (0);
 		std::cout << text << std::endl;
+	}
+	return (0);
 }
