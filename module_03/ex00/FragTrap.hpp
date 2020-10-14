@@ -6,13 +6,14 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/18 22:25:14 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/18 23:58:37 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/14 12:44:43 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRAGTRAP_HPP
 # define FRAGTRAP_HPP
 
+# include <cstdlib>
 # include <iostream>
 
 class FragTrap {

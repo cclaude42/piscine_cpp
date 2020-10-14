@@ -6,13 +6,14 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/19 00:03:42 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/19 00:09:05 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/14 12:45:06 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
 
+# include <cstdlib>
 # include <iostream>
 
 class ScavTrap {

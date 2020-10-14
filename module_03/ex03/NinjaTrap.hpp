@@ -6,13 +6,14 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/19 15:48:04 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/19 16:00:59 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/14 12:45:33 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef NINJATRAP_HPP
 # define NINJATRAP_HPP
 
+# include <cstdlib>
 # include <iostream>
 # include "ClapTrap.hpp"
 # include "FragTrap.hpp"

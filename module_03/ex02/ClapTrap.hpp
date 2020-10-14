@@ -6,13 +6,14 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/19 00:39:26 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/19 15:21:59 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/14 12:45:11 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
 
+# include <cstdlib>
 # include <iostream>
 
 class ClapTrap {
