@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/19 17:38:14 by cclaude           #+#    #+#             */
-/*   Updated: 2020/10/14 19:17:20 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/14 19:22:31 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 // Member functions
 
-void	ScavTrap::rangedAttack(std::string const & target)
+void	SuperTrap::rangedAttack(std::string const & target)
 {
 	std::cout << "5C4V-TP " << _name << " shoots laser beam at " << target;
 	std::cout << ", causing " << _ranged_atk;
 	std::cout << " points of damage!" << std::endl;
 }
 
-void	ScavTrap::meleeAttack(std::string const & target)
+void	SuperTrap::meleeAttack(std::string const & target)
 {
 	std::cout << "5C4V-TP " << _name << " bitch slaps " << target;
 	std::cout << ", causing " << _melee_atk;
