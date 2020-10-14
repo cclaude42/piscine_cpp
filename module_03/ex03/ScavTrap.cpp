@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/19 00:09:51 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/19 20:32:55 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/14 19:12:25 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,20 @@ void	ScavTrap::challengeNewcomer(std::string const & target)
 	}
 	else
 		std::cout << "5C4V-TP " << _name << " is out of energy!" << std::endl;
+}
+
+void	ScavTrap::rangedAttack(std::string const & target)
+{
+	std::cout << "5C4V-TP " << _name << " shoots revolver at " << target;
+	std::cout << ", causing " << _ranged_atk;
+	std::cout << " points of damage!" << std::endl;
+}
+
+void	ScavTrap::meleeAttack(std::string const & target)
+{
+	std::cout << "5C4V-TP " << _name << " swings knife at " << target;
+	std::cout << ", causing " << _melee_atk;
+	std::cout << " points of damage!" << std::endl;
 }
 
 // Overloaders

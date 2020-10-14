@@ -6,24 +6,25 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/19 00:38:53 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/19 15:45:21 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/14 19:14:23 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
+// Member functions
 
 void	ClapTrap::rangedAttack(std::string const & target)
 {
-	std::cout << _type << " " << _name << " attacks " << target;
-	std::cout << " at range, causing " << _ranged_atk;
+	std::cout << _type << " " << _name << " accidentally knocks over something on " << target;
+	std::cout << ", causing " << _ranged_atk;
 	std::cout << " points of damage!" << std::endl;
 }
 
 void	ClapTrap::meleeAttack(std::string const & target)
 {
-	std::cout << _type << " " << _name << " attacks " << target;
-	std::cout << " at melee, causing " << _melee_atk;
+	std::cout << _type << " " << _name << " trips and hits " << target;
+	std::cout << ", causing " << _melee_atk;
 	std::cout << " points of damage!" << std::endl;
 }
 

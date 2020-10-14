@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/18 22:24:51 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/19 00:06:54 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/14 19:07:01 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,15 @@ void	FragTrap::vaulthunter_dot_exe(std::string const & target)
 
 void	FragTrap::rangedAttack(std::string const & target)
 {
-	std::cout << "FR4G-TP " << _name << " attacks " << target;
-	std::cout << " at range, causing " << _ranged_atk;
+	std::cout << "FR4G-TP " << _name << " throws bolts at " << target;
+	std::cout << ", causing " << _ranged_atk;
 	std::cout << " points of damage!" << std::endl;
 }
 
 void	FragTrap::meleeAttack(std::string const & target)
 {
-	std::cout << "FR4G-TP " << _name << " attacks " << target;
-	std::cout << " at melee, causing " << _melee_atk;
+	std::cout << "FR4G-TP " << _name << " flicks " << target;
+	std::cout << ", causing " << _melee_atk;
 	std::cout << " points of damage!" << std::endl;
 }
 

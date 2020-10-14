@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/19 17:33:07 by cclaude           #+#    #+#             */
-/*   Updated: 2020/10/14 12:45:55 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/14 19:15:21 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ public:
 	~SuperTrap(void);
 
 	SuperTrap & operator=(const SuperTrap & src);
+
+	void	rangedAttack(std::string const & target);
+	void	meleeAttack(std::string const & target);
 };
 
 #endif

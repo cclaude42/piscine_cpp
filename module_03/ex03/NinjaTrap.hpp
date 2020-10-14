@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/19 15:48:04 by cclaude           #+#    #+#             */
-/*   Updated: 2020/10/14 12:45:33 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/14 19:15:12 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ public:
 	void	ninjaShoebox(const FragTrap & target);
 	void	ninjaShoebox(const ScavTrap & target);
 	void	ninjaShoebox(const NinjaTrap & target);
+	void	rangedAttack(std::string const & target);
+	void	meleeAttack(std::string const & target);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/18 22:25:14 by cclaude           #+#    #+#             */
-/*   Updated: 2020/10/14 12:45:15 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/14 19:11:01 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ public:
 	FragTrap & operator=(const FragTrap & src);
 
 	void	vaulthunter_dot_exe(std::string const & target);
+	void	rangedAttack(std::string const & target);
+	void	meleeAttack(std::string const & target);
 };
 
 #endif

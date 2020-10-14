@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/19 15:50:07 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/19 20:35:07 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/14 19:16:43 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,20 @@ void	NinjaTrap::ninjaShoebox(const NinjaTrap & target)
 	}
 	else
 		std::cout << "5C4V-TP " << _name << " is out of energy!" << std::endl;
+}
+
+void	ScavTrap::rangedAttack(std::string const & target)
+{
+	std::cout << "5C4V-TP " << _name << " throws smoke bomb at " << target;
+	std::cout << ", causing " << _ranged_atk;
+	std::cout << " points of damage!" << std::endl;
+}
+
+void	ScavTrap::meleeAttack(std::string const & target)
+{
+	std::cout << "5C4V-TP " << _name << " shows off his katana on " << target;
+	std::cout << ", causing " << _melee_atk;
+	std::cout << " points of damage!" << std::endl;
 }
 
 // Overloaders
