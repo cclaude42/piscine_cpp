@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/19 15:50:07 by cclaude           #+#    #+#             */
-/*   Updated: 2020/10/14 19:22:21 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/14 19:26:15 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,14 +68,14 @@ void	NinjaTrap::ninjaShoebox(const NinjaTrap & target)
 
 void	NinjaTrap::rangedAttack(std::string const & target)
 {
-	std::cout << "5C4V-TP " << _name << " throws smoke bomb at " << target;
+	std::cout << "N1NJ4-TP " << _name << " throws smoke bomb at " << target;
 	std::cout << ", causing " << _ranged_atk;
 	std::cout << " points of damage!" << std::endl;
 }
 
 void	NinjaTrap::meleeAttack(std::string const & target)
 {
-	std::cout << "5C4V-TP " << _name << " shows off his katana on " << target;
+	std::cout << "N1NJ4-TP " << _name << " shows off his katana on " << target;
 	std::cout << ", causing " << _melee_atk;
 	std::cout << " points of damage!" << std::endl;
 }
