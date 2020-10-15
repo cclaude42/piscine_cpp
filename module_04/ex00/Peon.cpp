@@ -6,15 +6,11 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/20 13:11:26 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/20 13:17:57 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/15 14:50:33 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Peon.hpp"
-
-// Member functions
-
-
 
 // Overloaders
 

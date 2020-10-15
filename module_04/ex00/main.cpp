@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/20 11:50:40 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/20 13:19:41 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/15 14:51:26 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,27 @@
 #include "Victim.hpp"
 #include "Peon.hpp"
 
+class Boye : public Victim {
+public:
+	Boye(void);
+	Boye(std::string name) { std::cout << "Hi..." << std::endl; }
+	Boye(const Boye & src) { std::cout << "Hi..." << std::endl; }
+	~Boye(void) { std::cout << "Bye bye!" << std::endl; }
+
+	Boye & operator=(const Boye & src) { _name = src._name; return (*this); }
+};
+
 int	main(void)
 {
 	Sorcerer	robert("Robert", "the Magnificent");
 	Victim		jim("Jimmy");
 	Peon		joe("Joe");
+	Boye		max("Max");
 
-	std::cout << robert << jim << joe;
+	std::cout << robert << jim << joe << max;
 	robert.polymorph(jim);
 	robert.polymorph(joe);
+	robert.polymorph(max);
 
 	return 0;
 }
