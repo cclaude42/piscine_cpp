@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/20 11:50:40 by cclaude           #+#    #+#             */
-/*   Updated: 2020/10/15 18:41:42 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/15 18:44:16 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,7 @@ int	main(void)
 	Enemy* c = new Nook();
 
 	me->attack(c);
-	std::cout << *me;
-	me->recoverAP();
-	me->recoverAP();
+	me->attack(c);
 
 	std::cout << std::endl << "==================" << std::endl << std::endl;
 
