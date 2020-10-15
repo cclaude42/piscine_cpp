@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/20 11:50:40 by cclaude           #+#    #+#             */
-/*   Updated: 2020/10/15 18:36:51 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/15 18:41:42 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Shovel : public AWeapon {
 public:
 	Shovel(void) : AWeapon("Shovel", 2, 100) {}
 	Shovel(const Shovel & src) : AWeapon(src) {}
-	virtual ~Shovel(void);
+	virtual ~Shovel(void) {}
 	Shovel & operator=(const Shovel & src) { (void)src; return (*this); }
 	void	attack(void) const { std::cout << "* CLANG! *" << std::endl; }
 };
