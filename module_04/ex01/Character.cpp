@@ -28,7 +28,7 @@ void				Character::equip(AWeapon *weapon)
 
 void				Character::attack(Enemy *enemy)
 {
-	if (_weapon != nullptr && _ap >= _weapon->getAPCost())
+	if (_weapon != NULL && _ap >= _weapon->getAPCost())
 	{
 		std::cout << _name << " attacks " << enemy->getType() << " with a ";
 		std::cout << _weapon->getName() << std::endl;
@@ -70,7 +70,7 @@ Character & Character::operator=(const Character & src)
 std::ostream &	operator<<(std::ostream & os, const Character & src)
 {
 	os << src.getName() << " has " << src.getAP() << " AP and ";
-	if (src.getWeapon() != nullptr)
+	if (src.getWeapon() != NULL)
 		os << "wields a " << src.getWeapon()->getName() << std::endl;
 	else
 		os << "is unarmed" << std::endl;
@@ -88,7 +88,7 @@ Character::Character(std::string const & name)
 {
 	_name = name;
 	_ap = 40;
-	_weapon = nullptr;
+	_weapon = NULL;
 }
 
 Character::Character(const Character & src)

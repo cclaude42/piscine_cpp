@@ -20,7 +20,7 @@ void		MateriaSource::learnMateria(AMateria* ptr)
 
 	for (i = 0 ; i < 4 ; i++)
 	{
-		if (_tab[i] == nullptr)
+		if (_tab[i] == NULL)
 		{
 			_tab[i] = ptr;
 			return ;
@@ -34,7 +34,7 @@ AMateria*	MateriaSource::createMateria(std::string const & type)
 
 	for (i = 0 ; i < 4 ; i++)
 	{
-		if (_tab[i] != nullptr && _tab[i]->getType() == type)
+		if (_tab[i] != NULL && _tab[i]->getType() == type)
 			return (_tab[i]->clone());
 	}
 	return (0);
@@ -48,15 +48,15 @@ MateriaSource & MateriaSource::operator=(const MateriaSource & src)
 
 	for (i = 0 ; i < 4 ; i++)
 	{
-		if (_tab[i] != nullptr)
+		if (_tab[i] != NULL)
 			delete _tab[i];
 	}
 	for (i = 0 ; i < 4 ; i++)
 	{
-		if (src._tab[i] != nullptr)
+		if (src._tab[i] != NULL)
 			_tab[i] = src._tab[i]->clone();
 		else
-			_tab[i] = nullptr;
+			_tab[i] = NULL;
 	}
 	return (*this);
 }
@@ -68,7 +68,7 @@ MateriaSource::MateriaSource(void)
 	int	i;
 
 	for (i = 0 ; i < 4 ; i++)
-		_tab[i] = nullptr;
+		_tab[i] = NULL;
 }
 
 MateriaSource::MateriaSource(const MateriaSource & src)
@@ -77,10 +77,10 @@ MateriaSource::MateriaSource(const MateriaSource & src)
 
 	for (i = 0 ; i < 4 ; i++)
 	{
-		if (src._tab[i] != nullptr)
+		if (src._tab[i] != NULL)
 			_tab[i] = src._tab[i]->clone();
 		else
-			_tab[i] = nullptr;
+			_tab[i] = NULL;
 	}
 }
 
@@ -90,7 +90,7 @@ MateriaSource::~MateriaSource(void)
 
 	for (i = 0 ; i < 4 ; i++)
 	{
-		if (_tab[i] != nullptr)
+		if (_tab[i] != NULL)
 			delete _tab[i];
 	}
 }

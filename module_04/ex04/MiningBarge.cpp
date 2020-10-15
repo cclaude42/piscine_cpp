@@ -20,7 +20,7 @@ void	MiningBarge::equip(IMiningLaser* laser)
 
 	for (i = 0 ; i < 4 ; i++)
 	{
-		if (_tab[i] == nullptr)
+		if (_tab[i] == NULL)
 		{
 			_tab[i] = laser;
 			return ;
@@ -34,7 +34,7 @@ void	MiningBarge::mine(IAsteroid* target) const
 
 	for (i = 0 ; i < 4 ; i++)
 	{
-		if (_tab[i] != nullptr)
+		if (_tab[i] != NULL)
 			_tab[i]->mine(target);
 	}
 }
@@ -57,7 +57,7 @@ MiningBarge::MiningBarge(void)
 	int	i;
 
 	for (i = 0 ; i < 4 ; i++)
-		_tab[i] = nullptr;
+		_tab[i] = NULL;
 }
 
 MiningBarge::MiningBarge(const MiningBarge & src)

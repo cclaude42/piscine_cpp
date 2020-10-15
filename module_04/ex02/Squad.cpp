@@ -24,14 +24,14 @@ ISpaceMarine*	Squad::getUnit(int n) const
 	if (n < _count && n >= 0)
 		return (_marines[n]);
 	else
-		return (nullptr);
+		return (NULL);
 }
 
 int				Squad::push(ISpaceMarine* ptr)
 {
 	int		i;
 
-	if (ptr == nullptr)
+	if (ptr == NULL)
 		return (_count);
 	i = 0;
 	while (i < _count)
@@ -84,7 +84,7 @@ Squad & Squad::operator=(const Squad & src)
 
 Squad::Squad(void)
 {
-	_marines = nullptr;
+	_marines = NULL;
 	_count = 0;
 }
 

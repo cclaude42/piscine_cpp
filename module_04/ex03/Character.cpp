@@ -25,7 +25,7 @@ void				Character::equip(AMateria* m)
 
 	for (i = 0 ; i < 4 ; i++)
 	{
-		if (_tab[i] == nullptr)
+		if (_tab[i] == NULL)
 		{
 			_tab[i] = m;
 			return ;
@@ -36,12 +36,12 @@ void				Character::equip(AMateria* m)
 void				Character::unequip(int idx)
 {
 	if (idx >= 0 && idx <= 3)
-		_tab[idx] = nullptr;
+		_tab[idx] = NULL;
 }
 
 void				Character::use(int idx, ICharacter& target)
 {
-	if (idx >= 0 && idx <= 3 && _tab[idx] != nullptr)
+	if (idx >= 0 && idx <= 3 && _tab[idx] != NULL)
 		_tab[idx]->use(target);
 }
 
@@ -53,16 +53,16 @@ Character & Character::operator=(const Character & src)
 
 	for (i = 0 ; i < 4 ; i++)
 	{
-		if (src._tab[i] != nullptr)
+		if (src._tab[i] != NULL)
 			delete _tab[i];
 	}
 	_name = src._name;
 	for (i = 0 ; i < 4 ; i++)
 	{
-		if (src._tab[i] != nullptr)
+		if (src._tab[i] != NULL)
 			_tab[i] = src._tab[i]->clone();
 		else
-			_tab[i] = nullptr;
+			_tab[i] = NULL;
 	}
 	return (*this);
 }
@@ -80,7 +80,7 @@ Character::Character(std::string name)
 
 	_name = name;
 	for (i = 0 ; i < 4 ; i++)
-		_tab[i] = nullptr;
+		_tab[i] = NULL;
 }
 
 Character::Character(const Character & src)
@@ -90,10 +90,10 @@ Character::Character(const Character & src)
 	_name = src._name;
 	for (i = 0 ; i < 4 ; i++)
 	{
-		if (src._tab[i] != nullptr)
+		if (src._tab[i] != NULL)
 			_tab[i] = src._tab[i]->clone();
 		else
-			_tab[i] = nullptr;
+			_tab[i] = NULL;
 	}
 }
 
@@ -103,7 +103,7 @@ Character::~Character(void)
 
 	for (i = 0 ; i < 4 ; i++)
 	{
-		if (_tab[i] != nullptr)
+		if (_tab[i] != NULL)
 			delete _tab[i];
 	}
 }

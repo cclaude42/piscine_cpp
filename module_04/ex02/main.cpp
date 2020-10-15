@@ -26,7 +26,7 @@ int main()
 	vlc->push(bob);
 	vlc->push(jim);
 	vlc->push(jim);
-	vlc->push(nullptr);
+	vlc->push(NULL);
 
 	std::cout << vlc->getCount() << " marines" << std::endl;
 
