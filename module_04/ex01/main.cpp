@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/20 11:50:40 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/23 19:45:36 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/15 18:06:52 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,29 @@
 #include "RadScorpion.hpp"
 #include "Character.hpp"
 
+class Nook : public Enemy {
+public:
+	Nook(void) : Enemy(150, "Nook") { std::cout << "Welcome to Nook Corner !" << std::endl; }
+	Nook(const Nook & src) : Enemy(src) { std::cout << "Welcome to Nook Corner !" << std::endl; }
+	virtual ~Nook(void) { std::cout << "You are worthy..." << std::endl; }
+	Nook & operator=(const Nook & src) { (void)src; return (*this); }
+};
+
+class Shovel : public AWeapon {
+public:
+	Shovel(void) : AWeapon("Shovel", 2, 100) {}
+	Shovel(const Shovel & src) : AWeapon(src) {}
+	virtual ~Shovel(void);
+	Shovel & operator=(const Shovel & src) { (void)src; return (*this); }
+	void	attack(void) const { std::cout << "* CLANG! *" << std::endl; }
+};
+
 int	main(void)
 {
 	Character* me = new Character("Isabelle");
 	AWeapon* pr = new PlasmaRifle();
 	AWeapon* pf = new PowerFist();
+	Aweapon* sh = new Shovel();
 
 	std::cout << *me;
 	me->equip(pr);
@@ -61,7 +79,23 @@ int	main(void)
 	std::cout << std::endl << "==================" << std::endl << std::endl;
 
 	std::cout << *me;
+	me->equip(sh);
+	std::cout << *me;
 
+	std::cout << std::endl << "==================" << std::endl << std::endl;
+
+	Enemy* c = new Nook();
+
+	me->attack(c);
+	std::cout << *me;
+	me->recoverAP();
+	me->recoverAP();
+
+	std::cout << std::endl << "==================" << std::endl << std::endl;
+
+	std::cout << *me;
+
+	delete sh;
 	delete pf;
 	delete pr;
 	delete me;

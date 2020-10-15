@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/24 17:15:10 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/24 17:59:23 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/15 18:26:14 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ std::string const &		AMateria::getType(void) const
 unsigned int			AMateria::getXP(void) const
 {
 	return (_xp);
+}
+
+void					AMateria::reset(void)
+{
+	_xp = 0;
 }
 
 void					AMateria::progress(void)

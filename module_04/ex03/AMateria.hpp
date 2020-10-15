@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/24 17:15:10 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/26 14:28:32 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/15 18:25:49 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ public:
 	std::string const &		getType(void) const; //Returns the materia type
 	unsigned int			getXP(void) const; //Returns the Materia's XP
 	void					progress(void);
+	void					reset(void);
 
 	virtual AMateria*		clone(void) const = 0;
 	virtual void			use(ICharacter& target) = 0;

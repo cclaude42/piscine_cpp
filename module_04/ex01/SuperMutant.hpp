@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/23 18:36:20 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/23 18:37:23 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/15 17:57:30 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class SuperMutant : public Enemy {
 public:
 	SuperMutant(void);
 	SuperMutant(const SuperMutant & src);
-	~SuperMutant(void);
+	virtual ~SuperMutant(void);
 
 	SuperMutant & operator=(const SuperMutant & src);
 

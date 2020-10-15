@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/24 18:01:41 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/26 14:00:18 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/15 18:26:29 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ AMateria*	Cure::clone(void) const
 void		Cure::use(ICharacter& target)
 {
 	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+	this->progress();
 }
 
 // Overloaders
@@ -31,6 +32,7 @@ Cure & Cure::operator=(const Cure & src)
 {
 	unsigned int	i;
 
+	this->reset();
 	for (i = 0 ; i < src.getXP() / 10 ; i++)
 		this->progress();
 	return (*this);

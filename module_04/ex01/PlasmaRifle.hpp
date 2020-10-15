@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/23 18:04:49 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/23 18:18:27 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/15 17:57:45 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class PlasmaRifle : public AWeapon {
 public:
 	PlasmaRifle(void);
 	PlasmaRifle(const PlasmaRifle & src);
-	~PlasmaRifle(void);
+	virtual ~PlasmaRifle(void);
 
 	PlasmaRifle & operator=(const PlasmaRifle & src);
 

@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/23 18:45:51 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/23 18:46:14 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/15 17:57:37 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class RadScorpion : public Enemy {
 public:
 	RadScorpion(void);
 	RadScorpion(const RadScorpion & src);
-	~RadScorpion(void);
+	virtual ~RadScorpion(void);
 
 	RadScorpion & operator=(const RadScorpion & src);
 };

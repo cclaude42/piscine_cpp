@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/24 17:50:29 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/26 14:00:24 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/15 18:24:59 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ AMateria*	Ice::clone(void) const
 void		Ice::use(ICharacter& target)
 {
 	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+	this->progress();
 }
 
 // Overloaders
