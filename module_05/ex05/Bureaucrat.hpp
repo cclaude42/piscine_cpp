@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/19 15:35:59 by cclaude           #+#    #+#             */
-/*   Updated: 2020/06/23 11:54:35 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/15 19:13:52 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define BUREAUCRAT_HPP
 
 # include <iostream>
+# include <cstdlib>
 # include "Form.hpp"
 
 class Bureaucrat {

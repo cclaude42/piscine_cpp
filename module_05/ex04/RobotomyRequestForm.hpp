@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/21 19:54:16 by cclaude           #+#    #+#             */
-/*   Updated: 2020/06/21 19:54:16 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/15 19:12:17 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ROBOTOMYREQUESTFORM_HPP
 
 # include <iostream>
+# include <cstdlib>
 # include "Form.hpp"
 
 class RobotomyRequestForm : public Form {

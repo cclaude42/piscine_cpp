@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/21 19:00:11 by cclaude           #+#    #+#             */
-/*   Updated: 2020/06/21 19:00:11 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/15 19:09:58 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ShrubberyCreationForm::action(void) const
 {
 	std::ofstream	file;
 
-	file.open(this->getTarget() + "_shruberry", std::ofstream::trunc);
+	file.open((this->getTarget() + "_shruberry").c_str(), std::ofstream::trunc);
 	file << ".git                  " << std::endl;
 	file << "├───branches          " << std::endl;
 	file << "├───hooks             " << std::endl;

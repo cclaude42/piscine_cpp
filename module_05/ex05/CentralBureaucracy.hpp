@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 18:50:14 by cclaude           #+#    #+#             */
-/*   Updated: 2020/06/23 11:45:10 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/15 19:13:42 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CENTRALBUREAUCRACY_HPP
 
 # include <iostream>
+# include <cstdlib>
 # include "Bureaucrat.hpp"
 # include "Form.hpp"
 # include "ShrubberyCreationForm.hpp"

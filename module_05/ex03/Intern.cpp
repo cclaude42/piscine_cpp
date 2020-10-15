@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 13:52:50 by cclaude           #+#    #+#             */
-/*   Updated: 2020/06/22 18:22:19 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/15 19:11:26 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ Form *	Intern::makeForm(std::string form, std::string target)
 		}
 	}
 	std::cout << "Intern doesn't know what form that is... Silly intern!" << std::endl;
-	return (nullptr);
+	return (NULL);
 }
 
 // Overloaders
