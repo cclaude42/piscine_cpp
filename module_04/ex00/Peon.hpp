@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/20 13:11:26 by cclaude           #+#    #+#             */
-/*   Updated: 2020/04/20 13:18:27 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/15 14:59:39 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ public:
 	Peon(void);
 	Peon(std::string name);
 	Peon(const Peon & src);
-	~Peon(void);
+	virtual ~Peon(void);
 
 	Peon & operator=(const Peon & src);
 };

@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/20 11:50:40 by cclaude           #+#    #+#             */
-/*   Updated: 2020/10/15 14:53:33 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/15 14:59:44 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ public:
 	Boye(void);
 	Boye(std::string name) : Victim(name) { std::cout << "Hi..." << std::endl; }
 	Boye(const Boye & src) : Victim(src) { std::cout << "Hi..." << std::endl; }
-	~Boye(void) { std::cout << "Bye bye!" << std::endl; }
+	virtual ~Boye(void) { std::cout << "Bye bye!" << std::endl; }
 
 	Boye & operator=(const Boye & src) { _name = src._name; return (*this); }
 };
