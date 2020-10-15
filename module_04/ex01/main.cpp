@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/20 11:50:40 by cclaude           #+#    #+#             */
-/*   Updated: 2020/10/15 18:06:52 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/15 18:36:51 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	main(void)
 	Character* me = new Character("Isabelle");
 	AWeapon* pr = new PlasmaRifle();
 	AWeapon* pf = new PowerFist();
-	Aweapon* sh = new Shovel();
+	AWeapon* sh = new Shovel();
 
 	std::cout << *me;
 	me->equip(pr);
