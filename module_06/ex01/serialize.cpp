@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 11:51:22 by cclaude           #+#    #+#             */
-/*   Updated: 2020/10/16 16:22:04 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/16 16:38:39 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,22 @@
 
 void	*serialize(void)
 {
+	std::string		s1;
+	std::string		s2;
+	int				n = rand();
 	std::string		chars = "abcdefghijklmnopqrstuvwxyz0123456789";
+
+	for ( i = 0 ; i < 20 ; i++ )
+	{
+		s1 += chars[rand() % 36];
+		s2 += chars[rand() % 36];
+	}
+
 	Data			*data = new Data;
 
-	data->s1 = chars[rand() % 36] + chars[rand() % 36] + chars[rand() % 36] + chars[rand() % 36]
-			+ chars[rand() % 36] + chars[rand() % 36] + chars[rand() % 36] + chars[rand() % 36];
-	data->n = rand();
-	data->s2 = chars[rand() % 36] + chars[rand() % 36] + chars[rand() % 36] + chars[rand() % 36]
-			+ chars[rand() % 36] + chars[rand() % 36] + chars[rand() % 36] + chars[rand() % 36];
+	data->s1 = s1;
+	data->n = n;
+	data->s2 = s2;
 
 	return (reinterpret_cast <void *> (data));
 }
