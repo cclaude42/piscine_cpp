@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/18 16:02:29 by cclaude           #+#    #+#             */
-/*   Updated: 2020/08/19 12:48:43 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/16 23:11:42 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ template <class T>
 Array<T>::Array(void)
 {
 	_size = 0;
-	_arr = nullptr;
+	_arr = NULL;
 }
 
 template <class T>
