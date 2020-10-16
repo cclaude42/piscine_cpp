@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 12:30:06 by cclaude           #+#    #+#             */
-/*   Updated: 2020/08/17 12:41:31 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/16 16:21:21 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(void)
 	std::cout << "n : " << data->n << std::endl;
 	std::cout << "s2 : " << data->s2 << std::endl;
 
-	delete (char *)ptr;
+	delete ptr;
 	delete data;
 
 	return (0);

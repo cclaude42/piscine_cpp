@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 16:54:15 by cclaude           #+#    #+#             */
-/*   Updated: 2020/08/18 12:38:57 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/16 16:21:51 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ Base	*generate(void)
 		ptr = new B;
 	else
 		ptr = new C;
-
-	// std::cout << (char)(65 + r) << " -> ";
 
 	return (ptr);
 }
