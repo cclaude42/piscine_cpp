@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 11:51:22 by cclaude           #+#    #+#             */
-/*   Updated: 2020/10/16 16:41:57 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/16 16:44:23 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*serialize(void)
 	int				n = rand();
 	std::string		chars = "abcdefghijklmnopqrstuvwxyz0123456789";
 
-	for ( int i = 0 ; i < 20 ; i++ )
+	for ( int i = 0 ; i < 8 ; i++ )
 	{
 		s1 += chars[rand() % 36];
 		s2 += chars[rand() % 36];
