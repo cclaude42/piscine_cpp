@@ -2,7 +2,7 @@ NAME = convert
 
 CC = clang++
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = convert.cpp \
 	is.cpp \

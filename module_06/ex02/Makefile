@@ -2,7 +2,7 @@ NAME = ABC
 
 CC = clang++
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = ABC.cpp \
 	main.cpp \

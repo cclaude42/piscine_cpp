@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 17:50:55 by cclaude           #+#    #+#             */
-/*   Updated: 2020/07/29 15:45:26 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/16 15:03:26 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CONVERT_HPP
 
 # include <iostream>
+# include <stdlib>
 
 int		is_char(std::string input);
 int		is_int(std::string input);

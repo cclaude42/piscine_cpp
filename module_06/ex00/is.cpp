@@ -6,7 +6,7 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 15:33:19 by cclaude           #+#    #+#             */
-/*   Updated: 2020/07/29 15:33:45 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/16 15:02:20 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		is_int(std::string input)
 		if (input[i] < '0' || input[i] > '9')
 			return (0);
 	}
-	try { stoi(input); }
+	try { atoi(input.c_str()); }
 	catch (std::out_of_range & e) { return (0); }
 	return (1);
 }
@@ -65,7 +65,7 @@ int		is_float(std::string input)
 	i++;
 	if (i < (int)input.size())
 		return (0);
-	try { stof(input); }
+	try { atof(input.c_str()); }
 	catch (std::out_of_range & e) { return (0); }
 	return (1);
 }
@@ -95,7 +95,7 @@ int		is_double(std::string input)
 			return (0);
 		i++;
 	}
-	try { stod(input); }
+	try { atod(input.c_str()); }
 	catch (std::out_of_range & e) { return (0); }
 	return (1);
 }
