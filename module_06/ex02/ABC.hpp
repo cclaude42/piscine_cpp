@@ -6,13 +6,14 @@
 /*   By: cclaude <cclaude@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 16:30:19 by cclaude           #+#    #+#             */
-/*   Updated: 2020/08/17 16:51:59 by cclaude          ###   ########.fr       */
+/*   Updated: 2020/10/16 16:26:33 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BASE_HPP
 # define BASE_HPP
 
+# include <cstdlib>
 # include <iostream>
 
 class Base {
