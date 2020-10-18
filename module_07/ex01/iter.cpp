@@ -12,52 +12,31 @@
 
 #include <iostream>
 
-template <class Array, class Function>
-void	iter(Array *arr, int len, Function &f)
+template <typename T>
+void	iter(T *arr, int len, void (*f)(T const & x))
 {
 	for (int i = 0 ; i < len ; i++)
 		f(arr[i]);
 }
 
-void	iter_string(std::string & s)
+class Awesome {
+public:
+Awesome( void ) : _n( 42 ) { return; }
+int get( void ) const { return this->_n; }
+private:
+int _n;};
+std::ostream & operator<<( std::ostream & o, Awesome const & rhs ) { o << rhs.get(); return o; }
+
+template< typename T >
+void print( T const & x ) { std::cout << x << std::endl; return; }
+
+int	main(void)
 {
-	s = s + "$";
-}
+	int tab[] = { 0, 1, 2, 3, 4 };
+	Awesome tab2[5];
 
-template <class NumType>
-void	iter_double(NumType & n)
-{
-	n = n * 2;
-}
-
-int		main(void)
-{
-	std::string	str[3] = {"baba", "boey", "son"};
-	int			tab[5] = {1, 2, 3, 4, 5};
-	float		flo[4] = {1.5, 4.7, 3.0, 2.3};
-	void		(*func1)(std::string & s);
-	void		(*func2)(int & n);
-	void		(*func3)(float & n);
-
-	func1 = iter_string;
-	func2 = iter_double;
-	func3 = iter_double;
-
-	std::cout << str[0] << " | " << str[1] << " | " << str[2] << std::endl;
-	std::cout << tab[0] << ", " << tab[1] << ", " << tab[2];
-	std::cout << ", " << tab[3] << ", " << tab[4] << std::endl;
-	std::cout << flo[0] << " ; " << flo[1] << " ; " << flo[2];
-	std::cout << " ; " << flo[3] << std::endl << std::endl;
-
-	::iter(str, 3, func1);
-	::iter(tab, 5, func2);
-	::iter(flo, 4, func3);
-
-	std::cout << str[0] << " | " << str[1] << " | " << str[2] << std::endl;
-	std::cout << tab[0] << ", " << tab[1] << ", " << tab[2];
-	std::cout << ", " << tab[3] << ", " << tab[4] << std::endl;
-	std::cout << flo[0] << " ; " << flo[1] << " ; " << flo[2];
-	std::cout << " ; " << flo[3] << std::endl;
+	iter(tab, 5, print);
+	iter(tab2, 5, print);
 
 	return (0);
 }
