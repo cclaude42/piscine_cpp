@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 17:37:09 by anonymou          #+#    #+#             */
-/*   Updated: 2020/10/19 17:23:02 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/19 17:28:40 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ int	main(void)
 	std::cout << "Vectors :" << std::endl << std::endl;
 	try
 	{
-		std::cout << "Found " << 4 << " in vector at position " << easyfind(vec, 4);
-		std::cout << "Found " << 8 << " in vector at position " << easyfind(vec, 8);
-		std::cout << "Found " << 12 << " in vector at position " << easyfind(vec, 12);
+		std::cout << "Found " << 4 << " in vector at position " << easyfind(vec, 4) << std::endl;
+		std::cout << "Found " << 8 << " in vector at position " << easyfind(vec, 8) << std::endl;
+		std::cout << "Found " << 12 << " in vector at position " << easyfind(vec, 12) << std::endl;
 	}
 	catch (std::exception & e)
 	{
@@ -48,9 +48,9 @@ int	main(void)
 	std::cout << "Lists :" << std::endl << std::endl;
 	try
 	{
-		std::cout << "Found " << 4 << " in list at position " << easyfind(lst, 4);
-		std::cout << "Found " << 8 << " in list at position " << easyfind(lst, 8);
-		std::cout << "Found " << 12 << " in list at position " << easyfind(lst, 12);
+		std::cout << "Found " << 4 << " in list at position " << easyfind(lst, 4) << std::endl;
+		std::cout << "Found " << 8 << " in list at position " << easyfind(lst, 8) << std::endl;
+		std::cout << "Found " << 12 << " in list at position " << easyfind(lst, 12) << std::endl;
 	}
 	catch (std::exception & e)
 	{
@@ -63,9 +63,9 @@ int	main(void)
 	std::cout << "Deques :" << std::endl << std::endl;
 	try
 	{
-		std::cout << "Found " << 4 << " in deque at position " << easyfind(deq, 4);
-		std::cout << "Found " << 8 << " in deque at position " << easyfind(deq, 8);
-		std::cout << "Found " << 12 << " in deque at position " << easyfind(deq, 12);
+		std::cout << "Found " << 4 << " in deque at position " << easyfind(deq, 4) << std::endl;
+		std::cout << "Found " << 8 << " in deque at position " << easyfind(deq, 8) << std::endl;
+		std::cout << "Found " << 12 << " in deque at position " << easyfind(deq, 12) << std::endl;
 	}
 	catch (std::exception & e)
 	{
