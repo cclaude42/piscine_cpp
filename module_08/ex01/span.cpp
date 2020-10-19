@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 19:36:00 by anonymou          #+#    #+#             */
-/*   Updated: 2020/10/19 20:03:50 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/19 20:09:33 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,28 @@
 
 // Member functions
 
-int					Storage::getSize(void)
+int					Storage::getSize(void) const
 {
 	return (_n);
 }
 
-std::vector<int>	Storage::getVect(void)
+std::vector<int>	Storage::getVect(void) const
 {
 	return (*_vct);
 }
 
 void				Storage::addNumber(int n)
 {
-	_vct.push_back(n);
+	_vct->push_back(n);
 }
 
 // Overloaders
 
 Storage & Storage::operator=(const Storage & src)
 {
-	_n = src.getSize();
 	if (_vct)
 		delete [] _vct;
+	_n = src.getSize();
 	_vct = NULL;
 	if (_n)
 		_vct = new std::vector<int>[_n];
@@ -45,10 +45,13 @@ Storage & Storage::operator=(const Storage & src)
 
 std::ostream & operator<<(std::ostream & os, const Storage & src)
 {
+	std::vector<int>	vect = src.getVect();
+
 	os << "Vector : [ ";
-	for (std::vector<int>::iterator & it : src.getVect())
+	for (std::vector<int>::iterator & it = vect.begin() ; it != vect.end() ; it++)
 		os << *it << " ";
 	os << "]" << std::endl;
+
 	return (os);
 }
 
