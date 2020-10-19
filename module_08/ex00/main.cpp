@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 17:37:09 by anonymou          #+#    #+#             */
-/*   Updated: 2020/10/19 17:35:05 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/19 17:35:37 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	main(void)
 	}
 	catch (std::exception & e)
 	{
-		std::cout << "Exception : " << e.what( << std::endl);
+		std::cout << "Exception : " << e.what() << std::endl;
 	}
 
 
