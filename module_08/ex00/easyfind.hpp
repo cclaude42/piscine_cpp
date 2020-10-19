@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 17:32:22 by anonymou          #+#    #+#             */
-/*   Updated: 2020/10/19 17:31:50 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/19 17:38:58 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,6 @@
 # include <iostream>
 # include <algorithm>
 
-class NotFoundException : public std::runtime_error
-{
-public:
-	NotFoundException(std::string msg) : std::runtime_error(msg) {}
-};
-
 template <typename T>
 int	easyfind(T & container, int n)
 {
@@ -30,7 +24,7 @@ int	easyfind(T & container, int n)
 	pos = std::find(container.begin(), container.end(), n);
 
 	if (pos == container.end())
-		throw NotFoundException("Can't found element in container !");
+		throw std::runtime_error("Can't find element in container !");
 
 	return (*pos);
 }

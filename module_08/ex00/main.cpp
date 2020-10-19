@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 17:37:09 by anonymou          #+#    #+#             */
-/*   Updated: 2020/10/19 17:35:37 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/19 17:37:36 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,11 @@ int	main(void)
 	try
 	{
 		pos = easyfind(lst, 4);
-		std::cout << "Found " << 4 << " in vector at position " << pos << std::endl;
+		std::cout << "Found " << 4 << " in list at position " << pos << std::endl;
 		pos = easyfind(lst, 8);
-		std::cout << "Found " << 8 << " in vector at position " << pos << std::endl;
+		std::cout << "Found " << 8 << " in list at position " << pos << std::endl;
 		pos = easyfind(lst, 12);
-		std::cout << "Found " << 12 << " in vector at position " << pos << std::endl;
+		std::cout << "Found " << 12 << " in list at position " << pos << std::endl;
 	}
 	catch (std::exception & e)
 	{
@@ -66,21 +66,22 @@ int	main(void)
 
 
 
-	std::cout << "Deques :" << std::endl << std::endl;
+	std::cout << "Deque :" << std::endl << std::endl;
 	try
 	{
 		pos = easyfind(deq, 4);
-		std::cout << "Found " << 4 << " in vector at position " << pos << std::endl;
+		std::cout << "Found " << 4 << " in deque at position " << pos << std::endl;
 		pos = easyfind(deq, 8);
-		std::cout << "Found " << 8 << " in vector at position " << pos << std::endl;
+		std::cout << "Found " << 8 << " in deque at position " << pos << std::endl;
 		pos = easyfind(deq, 12);
-		std::cout << "Found " << 12 << " in vector at position " << pos << std::endl;
+		std::cout << "Found " << 12 << " in deque at position " << pos << std::endl;
 	}
 	catch (std::exception & e)
 	{
 		std::cout << "Exception : " << e.what() << std::endl;
 	}
 
+	std::cout << std::endl;
 
 	return (0);
 }
