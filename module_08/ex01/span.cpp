@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 19:36:00 by anonymou          #+#    #+#             */
-/*   Updated: 2020/10/19 21:04:42 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/19 21:06:22 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int					Storage::shortestSpan(void)
 
 int					Storage::longestSpan(void)
 {
+	std::vector<int>	vect = *_vct;
+
 	std::sort(vect.begin(), vect.end());
 	return (*vect.end() - *vect.begin());
 }
