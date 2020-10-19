@@ -6,14 +6,14 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 19:30:22 by anonymou          #+#    #+#             */
-/*   Updated: 2020/10/19 20:07:23 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/19 20:10:10 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SPAN_HPP
 # define SPAN_HPP
 
-# include <stdio>
+# include <iostream>
 # include <algorithm>
 # include <vector>
 
