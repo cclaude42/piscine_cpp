@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 17:32:22 by anonymou          #+#    #+#             */
-/*   Updated: 2020/10/19 17:30:04 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/19 17:31:50 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class NotFoundException : public std::runtime_error
 {
 public:
-	GradeTooHighException(std::string msg) : std::runtime_error(msg) {}
+	NotFoundException(std::string msg) : std::runtime_error(msg) {}
 };
 
 template <typename T>
