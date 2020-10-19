@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 19:36:00 by anonymou          #+#    #+#             */
-/*   Updated: 2020/10/19 20:11:43 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/19 21:04:42 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,29 @@ void				Storage::addNumber(int n)
 	_vct->push_back(n);
 }
 
+int					Storage::shortestSpan(void)
+{
+	std::vector<int>	vect = *_vct;
+	int					prev = *vect.begin();
+	int					ret = 2147483647;
+
+	std::sort(vect.begin(), vect.end());
+	for (std::vector<int>::iterator it = vect.begin() + 1 ; it != vect.end() ; it++)
+	{
+		if (ret > *it - prev)
+			ret = *it - prev;
+		prev = *it;
+	}
+
+	return (ret);
+}
+
+int					Storage::longestSpan(void)
+{
+	std::sort(vect.begin(), vect.end());
+	return (*vect.end() - *vect.begin());
+}
+
 // Overloaders
 
 Storage & Storage::operator=(const Storage & src)
@@ -48,7 +71,7 @@ std::ostream & operator<<(std::ostream & os, const Storage & src)
 	std::vector<int>	vect = src.getVect();
 
 	os << "Vector : [ ";
-	for (std::vector<int>::iterator & it = vect.begin() ; it != vect.end() ; it++)
+	for (std::vector<int>::iterator it = vect.begin() ; it != vect.end() ; it++)
 		os << *it << " ";
 	os << "]" << std::endl;
 
