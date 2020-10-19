@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 19:36:00 by anonymou          #+#    #+#             */
-/*   Updated: 2020/10/19 20:09:33 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/19 20:11:43 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Storage & Storage::operator=(const Storage & src)
 	_vct = NULL;
 	if (_n)
 		_vct = new std::vector<int>[_n];
-	_vct = src.getVect();
+	*_vct = src.getVect();
 	return (*this);
 }
 

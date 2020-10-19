@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 19:30:22 by anonymou          #+#    #+#             */
-/*   Updated: 2020/10/19 20:10:10 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/19 20:11:11 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ private:
 	std::vector<int>	*_vct;
 	Storage(void);
 };
+std::ostream & operator<<(std::ostream & os, const Storage & src);
 
 #endif
