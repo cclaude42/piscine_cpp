@@ -6,26 +6,30 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 17:37:09 by anonymou          #+#    #+#             */
-/*   Updated: 2020/10/18 17:41:56 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/19 17:08:07 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "easyfind.hpp"
+#include <vector>
+#include <deque>
+#include <list>
 
 int	main(void)
 {
-	int	arr[5] = { 1, 2, 3, 4, 5 };
-
-	std::cout << "Found " << 3 << " at position " << easyfind(arr, 3) << std::endl;
+	int					n;
+	std::vector<int>	vector{ 10, 20, 30 };
 
 	try
 	{
-		std::cout << "Found " << 6 << " at position " << easyfind(arr, 6) << std::endl;
+		n = 20;
+		std::cout << "Found " << n << " in vector at position " << easyfind(vector, n);
+		n = 34;
+		std::cout << "Found " << n << " in vector at position " << easyfind(vector, n);
 	}
 	catch (std::exception & e)
 	{
-		std::cout << "Caught exception : " << e.what() << std::endl;
+		std::cout << "Exception : " << e.what();
 	}
 
 	return (0);

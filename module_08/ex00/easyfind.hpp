@@ -6,25 +6,27 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 17:32:22 by anonymou          #+#    #+#             */
-/*   Updated: 2020/10/18 17:59:48 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/19 16:09:13 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <algorithm>
-#include <vector>
+#ifndef EASYFIND_HPP
+# define EASYFIND_HPP
 
-template <typename T>
-int	easyfind(T & array, int n)
+# include <iostream>
+# include <algorithm>
+
+template <typename T, typename S>
+int	easyfind(T & container, int n)
 {
-	size_t						size = sizeof(array) / sizeof(array[0]);
-	std::vector<typename S>				vec(array, array + size);
-	std::vector<typename S>::iterator	pos;
+	typename T::iterator	pos;
 
-	pos = std::find(vec.begin, vec.end, n);
+	pos = std::find(container.begin(), container.end(), n);
 
-	if (pos == vec.end)
+	if (pos == vec.end())
 		throw "Can't found element in container !";
 
-	return (*loc);
+	return (*pos);
 }
+
+#endif
