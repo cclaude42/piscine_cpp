@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 20:01:45 by anonymou          #+#    #+#             */
-/*   Updated: 2020/10/20 13:59:30 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/20 19:48:56 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	main(void)
 {
-	Storage		stor(10);
+	Storage		stor(100000);
 
-	for (int i = 1 ; i <= 11 ; i++)
+	for (int i = 1 ; i <= 100001 ; i++)
 	{
 		try
 		{
