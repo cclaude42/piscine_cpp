@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 19:36:00 by anonymou          #+#    #+#             */
-/*   Updated: 2020/10/20 12:23:35 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/20 13:58:28 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ std::vector<int>	Storage::getVect(void) const
 
 void				Storage::addNumber(int n)
 {
-	if (*_vct.end() - *_vct.begin() >= _n)
+	if (_vct->size() >= _n)
 		throw std::runtime_error("Container is full !");
 	_vct->push_back(n);
 }
