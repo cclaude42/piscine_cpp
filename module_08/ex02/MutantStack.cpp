@@ -6,21 +6,21 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 17:34:39 by anonymou          #+#    #+#             */
-/*   Updated: 2020/10/21 17:52:27 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/21 18:06:07 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
 
-typedef typename std::deque<T>::iterator iterator;
-
 // Member functions
 
+template <typename T>
 iterator	MutantStack::begin(void)
 {
 	return (std::begin(this->c));
 }
 
+template <typename T>
 iterator	MutantStack::end(void)
 {
 	return (std::end(this->c));
@@ -28,6 +28,7 @@ iterator	MutantStack::end(void)
 
 // Overloaders
 
+template <typename T>
 MutantStack	& MutantStack::operator=(const MutantStack & src)
 {
 	this->c = src.c;
@@ -36,14 +37,17 @@ MutantStack	& MutantStack::operator=(const MutantStack & src)
 
 // Constructors and destructors
 
+template <typename T>
 MutantStack::MutantStack(void) : std::stack<T>()
 {
 }
 
+template <typename T>
 MutantStack::MutantStack(const MutantStack & src) : std::stack<T>(src)
 {
 }
 
+template <typename T>
 MutantStack::~MutantStack(void)
 {
 }
