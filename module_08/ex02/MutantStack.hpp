@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 15:36:49 by anonymou          #+#    #+#             */
-/*   Updated: 2020/10/21 20:03:19 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/21 20:07:39 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ public:
 
 	MutantStack	&operator=(const MutantStack & src);
 
-	iterator	begin(void) { return (this->c.begin()); }
-	iterator	end(void) { return (this->c.end()); }
+	iterator	begin(void);
+	iterator	end(void);
 };
 
 #endif
