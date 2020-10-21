@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 15:36:49 by anonymou          #+#    #+#             */
-/*   Updated: 2020/10/21 18:10:28 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/21 18:13:33 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ class MutantStack : public std::stack<T>
 public:
 	typedef typename std::deque<T>::iterator iterator;
 
-	MutantStack(void);
-	MutantStack(const MutantStack & src);
-	~MutantStack(void);
+	MutantStack(void) {}
+	MutantStack(const MutantStack & src) {}
+	~MutantStack(void) {}
 
-	MutantStack	&operator=(const MutantStack & src);
+	MutantStack	&operator=(const MutantStack & src) { this->c = src.c; return (*this); }
 
-	iterator	begin(void) { return (std::begin(this->c)); };
-	iterator	end(void) { return (std::end(this->c)); };
+	iterator	begin(void) { return (std::begin(this->c)); }
+	iterator	end(void) { return (std::end(this->c)); }
 };
 
 #endif
