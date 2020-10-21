@@ -5,12 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/21 17:13:59 by anonymou          #+#    #+#             */
-/*   Updated: 2020/10/21 20:06:20 by anonymous        ###   ########.fr       */
+/*   Created: 2020/10/21 17:17:59 by anonymou          #+#    #+#             */
+/*   Updated: 2020/10/21 20:18:34 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
+#include "MutantStack.cpp"
 #include <iomanip>
 #include <list>
 
@@ -19,22 +20,22 @@ int		main(void)
 	MutantStack<int>	mstack;
 	std::list<int>		lst;
 
-	std::cout << " Mutant Stack |   std::list  " << std::endl;
-	std::cout << "-----------------------------" << std::endl;
+	std::cout << "   Mutant Stack   |     std::list    " << std::endl;
+	std::cout << "-------------------------------------" << std::endl;
 
 	mstack.push(5);
 	lst.push_back(5);
 	mstack.push(17);
 	lst.push_back(17);
 
-	std::cout << "Last member added :" << std::endl;
-	std::cout << std::setw(13) << mstack.top() << " |" << std::setw(13) << lst.back() << std::endl;
+	std::cout << " Last added :     |" << std::endl;
+	std::cout << std::setw(17) << mstack.top() << " |" << std::setw(17) << lst.back() << std::endl;
 
 	mstack.pop();
 	lst.pop_back();
 
-	std::cout << "Size :" << std::endl;
-	std::cout << std::setw(13) << mstack.size() << " |" << std::setw(13) << lst.size() << std::endl;
+	std::cout << " Size :           |" << std::endl;
+	std::cout << std::setw(17) << mstack.size() << " |" << std::setw(17) << lst.size() << std::endl;
 
 	mstack.push(3);
 	lst.push_back(3);
@@ -45,8 +46,8 @@ int		main(void)
 	mstack.push(0);
 	lst.push_back(0);
 
-	std::cout << "Last member added :" << std::endl;
-	std::cout << std::setw(13) << mstack.top() << " |" << std::setw(13) << lst.back() << std::endl;
+	std::cout << " Last added :     |" << std::endl;
+	std::cout << std::setw(17) << mstack.top() << " |" << std::setw(17) << lst.back() << std::endl;
 
 	MutantStack<int>::iterator	mit = mstack.begin();
 	std::list<int>::iterator	lit = lst.begin();
@@ -58,10 +59,10 @@ int		main(void)
 	--mit;
 	--lit;
 
-	std::cout << "Contents :" << std::endl;
+	std::cout << " Contents :       |" << std::endl;
 	while (mit != mend || lit != lend)
 	{
-		std::cout << std::setw(13) << *mit << " |" << std::setw(13) << *lit << std::endl;
+		std::cout << std::setw(17) << *mit << " |" << std::setw(17) << *lit << std::endl;
 		mit++;
 		lit++;
 	}
@@ -69,8 +70,8 @@ int		main(void)
 	std::stack<int>	s(mstack);
 	std::list<int>	l(lst);
 
-	std::cout << "Last member added :" << std::endl;
-	std::cout << std::setw(13) << s.top() << " |" << std::setw(13) << l.back() << std::endl;
+	std::cout << " Last added :     |" << std::endl;
+	std::cout << std::setw(17) << s.top() << " |" << std::setw(17) << l.back() << std::endl;
 
 	MutantStack<int>	mstack2 = mstack;
 	std::list<int>		lst2 = lst;
@@ -87,10 +88,10 @@ int		main(void)
 	mend = mstack2.end();
 	lend = lst2.end();
 
-	std::cout << "Contents :" << std::endl;
+	std::cout << " Contents :       |" << std::endl;
 	while (mit != mend || lit != lend)
 	{
-		std::cout << std::setw(13) << *mit << " |" << std::setw(13) << *lit << std::endl;
+		std::cout << std::setw(17) << *mit << " |" << std::setw(17) << *lit << std::endl;
 		mit++;
 		lit++;
 	}
