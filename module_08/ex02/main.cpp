@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 17:13:59 by anonymou          #+#    #+#             */
-/*   Updated: 2020/10/21 19:58:57 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/21 20:00:42 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ int		main(void)
 	mstack.push(17);
 	lst.push_back(17);
 
-	std::cout << "Top :" << std::endl;
-	std::cout << std::setw(13) << mstack.top() << " |" << std::setw(13) << lst.top() << std::endl;
+	std::cout << "Last member added :" << std::endl;
+	std::cout << std::setw(13) << mstack.top() << " |" << std::setw(13) << lst.back() << std::endl;
 
 	mstack.pop();
 	lst.pop();
@@ -45,8 +45,8 @@ int		main(void)
 	mstack.push(0);
 	lst.push_back(0);
 
-	std::cout << "Top :" << std::endl;
-	std::cout << std::setw(13) << mstack.top() << " |" << std::setw(13) << lst.top() << std::endl;
+	std::cout << "Last member added :" << std::endl;
+	std::cout << std::setw(13) << mstack.top() << " |" << std::setw(13) << lst.back() << std::endl;
 
 	MutantStack<int>::iterator	mit = mstack.begin();
 	std::list<int>::iterator	lit = lst.begin();
@@ -69,8 +69,8 @@ int		main(void)
 	std::stack<int>	s(mstack);
 	std::list<int>	l(lst);
 
-	std::cout << "Top :" << std::endl;
-	std::cout << std::setw(13) << s.top() << " |" << std::setw(13) << l.top() << std::endl;
+	std::cout << "Last member added :" << std::endl;
+	std::cout << std::setw(13) << s.top() << " |" << std::setw(13) << l.back() << std::endl;
 
 	MutantStack<int>	mstack2 = mstack;
 	std::list<int>		lst2 = lst;
