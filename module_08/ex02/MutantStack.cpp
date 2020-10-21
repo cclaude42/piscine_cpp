@@ -6,11 +6,13 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 17:34:39 by anonymou          #+#    #+#             */
-/*   Updated: 2020/10/21 17:39:27 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/21 17:52:27 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
+
+typedef typename std::deque<T>::iterator iterator;
 
 // Member functions
 
@@ -38,7 +40,7 @@ MutantStack::MutantStack(void) : std::stack<T>()
 {
 }
 
-MutantStack::MutantStack(const Array & src) : std::stack<T>(src)
+MutantStack::MutantStack(const MutantStack & src) : std::stack<T>(src)
 {
 }
 
