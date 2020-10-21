@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 20:01:45 by anonymou          #+#    #+#             */
-/*   Updated: 2020/10/20 20:38:52 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/21 15:49:05 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,31 @@
 int	main(void)
 {
 	Storage		stor(100004);
-
-	for (int i = 1 ; i <= 100000 ; i++)
-		stor.addNumber(i * 2);
-
-	// Shortest should be 2
-	// Longest should be 199998
+	// Shortest should be 0
+	// Longest should be 0
 
 	std::cout << "Shortest span : " << stor.shortestSpan() << std::endl;
 	std::cout << "Longest span : " << stor.longestSpan() << std::endl;
 
-	stor.addNumber(45673); // Make shortest span 1
-	stor.addNumber(1000000); // Make longest span 999998
+	for (int i = 1 ; i <= 10 ; i++)
+		stor.addNumber(i);
+	// Shortest should be 1
+	// Longest should be 9
 
 	std::cout << "Shortest span : " << stor.shortestSpan() << std::endl;
 	std::cout << "Longest span : " << stor.longestSpan() << std::endl;
 
-	stor.addNumber(57823); // Make shortest span 0
-	stor.addNumber(-1000000); // Make longest span 2000000
+	stor.addNumbers(11, 100000);
+	// Shortest should be 1
+	// Longest should be 199999
+
+	std::cout << "Shortest span : " << stor.shortestSpan() << std::endl;
+	std::cout << "Longest span : " << stor.longestSpan() << std::endl;
+
+	stor.addNumber(45673);
+	// Shortest should be 0
+	stor.addNumber(-1000000);
+	// Longest should be 2000000
 
 	std::cout << "Shortest span : " << stor.shortestSpan() << std::endl;
 	std::cout << "Longest span : " << stor.longestSpan() << std::endl;

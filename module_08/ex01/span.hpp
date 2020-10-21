@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 19:30:22 by anonymou          #+#    #+#             */
-/*   Updated: 2020/10/20 12:20:20 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/21 15:46:18 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ public:
 	int					getSize(void) const;
 	std::vector<int>	getVect(void) const;
 	void				addNumber(int n);
+	void				addNumbers(int n, int o);
 	int					shortestSpan(void);
 	int					longestSpan(void);
 private:
