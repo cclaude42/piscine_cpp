@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 20:01:45 by anonymou          #+#    #+#             */
-/*   Updated: 2020/10/21 15:49:05 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/21 15:51:33 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,15 @@ int	main(void)
 
 	stor.addNumbers(11, 100000);
 	// Shortest should be 1
-	// Longest should be 199999
+	// Longest should be 99999
 
 	std::cout << "Shortest span : " << stor.shortestSpan() << std::endl;
 	std::cout << "Longest span : " << stor.longestSpan() << std::endl;
 
 	stor.addNumber(45673);
 	// Shortest should be 0
-	stor.addNumber(-1000000);
-	// Longest should be 2000000
+	stor.addNumber(-100000);
+	// Longest should be 200000
 
 	std::cout << "Shortest span : " << stor.shortestSpan() << std::endl;
 	std::cout << "Longest span : " << stor.longestSpan() << std::endl;

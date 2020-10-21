@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 19:36:00 by anonymou          #+#    #+#             */
-/*   Updated: 2020/10/21 15:44:24 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/21 15:51:18 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void				Storage::addNumbers(int n, int o)
 {
 	if (n > o)
 		return ;
-	for ( int i = n ; i < o ; i++ )
+	for ( int i = n ; i <= o ; i++ )
 	{
 		if (_vct->size() >= _n)
 			throw std::runtime_error("Container is full !");
