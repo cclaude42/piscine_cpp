@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 17:13:59 by anonymou          #+#    #+#             */
-/*   Updated: 2020/10/21 20:00:42 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/21 20:06:20 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		main(void)
 	std::cout << std::setw(13) << mstack.top() << " |" << std::setw(13) << lst.back() << std::endl;
 
 	mstack.pop();
-	lst.pop();
+	lst.pop_back();
 
 	std::cout << "Size :" << std::endl;
 	std::cout << std::setw(13) << mstack.size() << " |" << std::setw(13) << lst.size() << std::endl;
