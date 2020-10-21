@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 17:17:59 by anonymou          #+#    #+#             */
-/*   Updated: 2020/10/21 20:18:34 by anonymous        ###   ########.fr       */
+/*   Updated: 2020/10/21 20:21:05 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int		main(void)
 	MutantStack<int>	mstack;
 	std::list<int>		lst;
 
+	std::cout << "-------------------------------------" << std::endl;
 	std::cout << "   Mutant Stack   |     std::list    " << std::endl;
 	std::cout << "-------------------------------------" << std::endl;
 
